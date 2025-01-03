@@ -302,7 +302,7 @@ width: 100%;border-radius: .5rem ;border: none;height:  3rem;padding: 1rem;color
 color: rgb(0, 0, 0);font-size:1.3rem ;font-weight: 500;}
 
 .popup-content-share-input-light{
-width: 100%;border-radius: .5rem ;border: none;height:  3rem;padding: 1rem;color: rgb(0, 0, 0);margin-top: 1rem;
+width: 100%;border-radius: .5rem ;height:  3rem;padding: 1rem;color: rgb(0, 0, 0);margin-top: 1rem;
     background: white;border: 1px solid #FFFFFF29;
 }
 
@@ -367,4 +367,4 @@ width: 100%;border-radius: .5rem ;border: none;height:  3rem;padding: 1rem;color
 
 .popup-content-share span{margin-top: 2rem;  display: flex;flex-direction: row;justify-content: space-between;}
 
-
+.popup-content-share-light span{margin-top: 2rem;  display: flex;flex-direction: row;justify-content: space-between;}
