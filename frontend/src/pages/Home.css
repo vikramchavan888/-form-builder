@@ -1,4 +1,4 @@
-form.home-container {
+.home-container {
   background: #1F1F23;
   height: auto;
   min-height: 100vh;
@@ -66,8 +66,7 @@ margin-top: 1rem;font-family:'Roboto',sans-serif;
 }
 
 
-.toggle-lable{margin: .4rem .5rem 0 .5rem;}
-.toggle-lable-light{margin: .4rem .5rem 0 .5rem;color: black;}
+.darklight-mode h5{margin: .4rem .5rem 0 .5rem;}
 
 
 .home-folder{margin: 0 10% 0 10%; width: 80%; display: flex;flex-direction: row;
@@ -138,7 +137,7 @@ color:black;
     height: 18rem;position: relative;
     color: rgb(0, 0, 0);
     justify-content: center;
-    display: flex;  border: 1px solid #5b5353cb;
+    display: flex;  border: 1px solid #5b5353;
      font-family:'Roboto',sans-serif;
     border-radius: .5rem;
     flex-direction: column;
@@ -204,13 +203,6 @@ border: 1px solid #47474A;position: fixed;
 font-size: 27.33px;
 font-weight: 500;
 line-height: 41px;}
-  .popup-content-delete-light h1{
-  margin-bottom: 10px;color: rgb(0, 0, 0);
-  font-family:'Roboto',sans-serif;
-font-size: 27.33px;
-font-weight: 500;
-line-height: 41px;}
-
 
 
 .popup-content h1 {margin-top: 1rem;
@@ -253,15 +245,6 @@ line-height: 41px;
   cursor: pointer;
 }
 
-
-.cancle-add-form-light {width: 50%;
-  padding: 10px; font-family:'Roboto',sans-serif;
-
- border: none;
-  font-size: 1.5rem;font-weight: 500;
-  color: rgb(0, 0, 0);background: transparent;
-  cursor: pointer;
-}
 
 
 button {

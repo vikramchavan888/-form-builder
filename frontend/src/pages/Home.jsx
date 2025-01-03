@@ -628,9 +628,7 @@ const handledeleteForm = async (formId) => {
             Share
           </button>
           <div className="darklight-mode">
-            <h5 className={dark ? "toggle-lable" : "toggle-lable-light"}>
-              Light
-            </h5>
+            <h5>Light</h5>
             <input
               onClick={toggleDarkMode}
               type="checkbox"
@@ -640,9 +638,7 @@ const handledeleteForm = async (formId) => {
             <label htmlFor="checkbox" className="checkbox-label">
               <span className="ball"></span>
             </label>
-            <h5 className={dark ? "toggle-lable" : "toggle-lable-light"}>
-              Dark
-            </h5>
+            <h5>Dark</h5>
           </div>
         </div>
         <div className="home-folder">
@@ -783,7 +779,7 @@ const handledeleteForm = async (formId) => {
                 style={{
                   cursor: authority === "View" ? "not-allowed" : "pointer",
                 }}
-                className={dark ? "delete-form" : "delete-form-light"}
+                className="delete-form"
               >
                 <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1734972398/delete_qwsqie.png" />
               </div>
@@ -791,12 +787,9 @@ const handledeleteForm = async (formId) => {
           ))}
 
           {showDeleteformPopup && (
-            <div
-              className={
-                dark ? "popup-content-delete" : "popup-content-delete-light"
-              }
-              ref={popupRef}
-            >
+           
+             <div className={dark ? "popup-content-delete" : "popup-content-delete-light"}
+            ref={popupRef}>
               <h1>Are you sure you want to delete this form?</h1>
               <div className="popup-delete-buttons">
                 {selectedFolder ? (
@@ -828,7 +821,8 @@ const handledeleteForm = async (formId) => {
                 )}
 
                 <button
-                  className={dark ? "cancle-add-form" : "cancle-add-form-light"}
+                 className={dark ? "cancle-add-form" : "cancle-add-form-light"}
+            
                   onClick={() => {
                     setshowDeleteformPopup(false);
                     setSelectedForm(null);
