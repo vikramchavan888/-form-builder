@@ -649,18 +649,18 @@ const handledeleteForm = async (formId) => {
     }),
     singleValue: (provided) => ({
       ...provided,
-      color: "#ffffff",
+      color: "black",
       fontSize: "14px",
       fontWeight: "500",
     }),
     dropdownIndicator: (provided, state) => ({
       ...provided,
-      color: "#ffffff",
+      color: "black",
       transform: state.selectProps.menuIsOpen
         ? "rotate(180deg)"
         : "rotate(0deg)",
       "&:hover": {
-        color: "#ffffff",
+        color: "black",
       },
     }),
     indicatorSeparator: () => ({
