@@ -5,8 +5,7 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Landingpage from "./pages/Landingpage";
 import Setting from "./pages/Setting"
-import CreateForm from "./pages/Createform";
-import Demo from "./pages/Demo"
+import CreateForm from "./pages/CreateForm";
 import CreateOutsideform from "./pages/CreateOutsideform"
 import Responseformone from "./pages/Responseformone";
 import Responseformtwo from "./pages/Responseformtwo";
@@ -42,7 +41,6 @@ function App() {
         />
 
         <Route path="/formresponse/:formId" element={<Responseformone />} />
-        <Route path="/demo" element={<Demo />} />
         <Route path="/formreesponse/:formId" element={<Responseformtwo />} />
       </Routes>
     </div>
