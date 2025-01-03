@@ -251,28 +251,18 @@ const DynamicFormEditor = () => {
         </button>
 
         <div
-          className={
-            showDiv === "form"
-              ? "form-div-selected"
-              : dark
-              ? "form-div"
-              : "form-div form-div-dark"
-          }
+          className={`${
+            showDiv === "form" ? "form-div-selected" : "form-div"
+          } ${!dark && showDiv !== "form" ? "dark-mode" : ""}`}
           onClick={() => setShowDiv("form")}
         >
           Flow
         </div>
         <div
-          className={
-            showDiv === "response"
-              ? "response-div-selected"
-              : dark
-              ? "response-div"
-              : "response-div response-div-dark"
-          }
-          onClick={async () => {
-            setShowDiv("response");
-          }}
+          className={`${
+            showDiv === "response" ? "response-div-selected" : "response-div"
+          } ${!dark && showDiv !== "response" ? "dark-mode" : ""}`}
+          onClick={() => setShowDiv("response")}
         >
           Response
         </div>
