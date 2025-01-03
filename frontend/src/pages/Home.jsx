@@ -698,9 +698,7 @@ const handledeleteForm = async (formId) => {
             Share
           </button>
           <div className="darklight-mode">
-            <h5 className={dark ? "togglelable" : "togglelable-light"}>
-              Light
-            </h5>
+            <h5 className={dark ? "togglelable" : "togglelable-light"}>Dark</h5>
             <input
               onClick={toggleDarkMode}
               type="checkbox"
@@ -710,7 +708,9 @@ const handledeleteForm = async (formId) => {
             <label htmlFor="checkbox" className="checkbox-label">
               <span className="ball"></span>
             </label>
-            <h5 className={dark ? "togglelable" : "togglelable-light"}>Dark</h5>
+            <h5 className={dark ? "togglelable" : "togglelable-light"}>
+              Light
+            </h5>
           </div>
         </div>
         <div className="home-folder">
@@ -877,7 +877,7 @@ const handledeleteForm = async (formId) => {
                         setSelectedForm(null);
                       }}
                     >
-                      Done
+                      Confirm
                     </button>
                   </>
                 ) : (
@@ -890,7 +890,7 @@ const handledeleteForm = async (formId) => {
                         setSelectedForm(null);
                       }}
                     >
-                      Done
+                      Confirm
                     </button>
                   </>
                 )}
@@ -909,11 +909,18 @@ const handledeleteForm = async (formId) => {
           )}
 
           {shareshowPopup && (
-            <div className="popup-content-share" ref={popupRef}>
+            <div
+              className={
+                dark ? "popup-content-share" : "popup-content-share-light"
+              }
+              ref={popupRef}
+            >
               <span>
                 <h5>Invite by Email</h5>
                 <select
-                  className="popup-content-select"
+                  className={
+                    dark ? "popup-content-select" : "popup-content-select-light"
+                  }
                   value={accessLevel}
                   onChange={(e) => setAccessLevel(e.target.value)}
                 >
@@ -923,7 +930,11 @@ const handledeleteForm = async (formId) => {
               </span>
 
               <input
-                className="popup-content-share-input"
+                className={
+                  dark
+                    ? "popup-content-share-input"
+                    : "popup-content-share-input-light"
+                }
                 type="email"
                 placeholder="Enter user's email"
                 value={email}
