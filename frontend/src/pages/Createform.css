@@ -124,8 +124,13 @@ font-weight: 400;color: white;}
 .bubble-input{width: 100%;border-radius: .5rem;
   color: rgb(255, 255, 255);height: 3rem; border: none;background: #1F1F23;
   margin-top: .5rem;padding-left: .5rem;
-
 }
+
+.bubble-input-outer{width: 100%;border-radius: .5rem;display: flex;flex-direction: row;
+  color: rgb(255, 255, 255);height: 3rem; border: none;background: #1F1F23;
+  margin-top: .5rem;padding-left: .5rem;
+}
+
 
 .darklight-mode-form{display: flex;flex-direction: row;color: #FFFFFFEB;right: 16rem;position: absolute;
 margin-top: 1rem;font-family:'Roboto',sans-serif;

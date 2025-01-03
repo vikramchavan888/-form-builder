@@ -338,7 +338,7 @@ const DynamicFormEditor = () => {
                         </p>
                       )
                     ) : (
-                      <div className="bubble-input">
+                      <div className="bubble-input-outer">
                         <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1735363256/Vector_2_ga51fe.png" />
                         <input
                           className="bubble-input"
