@@ -127,7 +127,7 @@ function Home() {
   const fetchWorkspaces = useCallback(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/auth/workspaces/${userId}`
+        `https://form-builder-vikram3.vercel.app/auth/workspaces/${userId}`
       );
       setWorkspaces(response.data);
       if (response.data.length > 0) {
@@ -179,7 +179,7 @@ function Home() {
   const fetchWorkspaceFolders = async () => {
     try {
       const response = await fetch(
-        ` http://localhost:3000/auth/workspace/${selectedWorkspaceId}/folders`
+        ` https://form-builder-vikram3.vercel.app/auth/workspace/${selectedWorkspaceId}/folders`
       );
       const data = await response.json();
       if (response.ok) {
@@ -201,7 +201,7 @@ function Home() {
       const fetchWorkspaceFolders = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3000/auth/workspace/${selectedWorkspaceId}/folders`
+            `https://form-builder-vikram3.vercel.app/auth/workspace/${selectedWorkspaceId}/folders`
           );
 
           setFolders(response.data.folders);
@@ -218,7 +218,7 @@ function Home() {
   const fetchWorkspaceOutsideForms = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/auth/workspace/${workspaceId}/forms`
+        `https://form-builder-vikram3.vercel.app/auth/workspace/${workspaceId}/forms`
       );
       const data = await response.json();
 
@@ -238,7 +238,7 @@ function Home() {
       const fetchWorkspaceOutsideForms = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3000/auth/workspace/${selectedWorkspaceId}/forms`
+            `https://form-builder-vikram3.vercel.app/auth/workspace/${selectedWorkspaceId}/forms`
           );
 
           setOutsideForms(response.data.outforms);
@@ -257,7 +257,7 @@ function Home() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/auth/folders/${selectedFolder}/forms`
+        `https://form-builder-vikram3.vercel.app/auth/folders/${selectedFolder}/forms`
       );
       const data = await response.json();
 
@@ -278,7 +278,7 @@ function Home() {
       const fetchFolderForms = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3000/auth/folders/${selectedFolder}/forms`
+            `https://form-builder-vikram3.vercel.app/auth/folders/${selectedFolder}/forms`
           );
           setOutsideForms(response.data.forms);
         } catch (error) {
@@ -305,7 +305,7 @@ function Home() {
     }
     try {
       const response = await fetch(
-        `http://localhost:3000/auth/workspace/${selectedWorkspaceId}/folder`,
+        `https://form-builder-vikram3.vercel.app/auth/workspace/${selectedWorkspaceId}/folder`,
         {
           method: "POST",
           headers: {
@@ -337,7 +337,7 @@ function Home() {
     }
     try {
       const response = await fetch(
-        `http://localhost:3000/auth/workspace/${workspaceId}/forms`,
+        `https://form-builder-vikram3.vercel.app/auth/workspace/${workspaceId}/forms`,
         {
           method: "POST",
           headers: {
@@ -372,7 +372,7 @@ function Home() {
     }
     try {
       const response = await fetch(
-        `http://localhost:3000/auth/folders/${selectedFolder}/forms`,
+        `https://form-builder-vikram3.vercel.app/auth/folders/${selectedFolder}/forms`,
         {
           method: "POST",
           headers: {
@@ -400,7 +400,7 @@ function Home() {
    
     try {
       const response = await fetch(
-        `http://localhost:3000/auth/workspace/folder/${folderId}`,
+        `https://form-builder-vikram3.vercel.app/auth/workspace/folder/${folderId}`,
         {
           method: "DELETE",
         }
@@ -423,7 +423,7 @@ function Home() {
 const handledeleteoutsideForm = async (formId) => {
   try {
     const response = await fetch(
-      `http://localhost:3000/auth/workspace/outform/${formId}`,
+      `https://form-builder-vikram3.vercel.app/auth/workspace/outform/${formId}`,
       {
         method: "DELETE",
       }
@@ -446,7 +446,7 @@ const handledeleteoutsideForm = async (formId) => {
 const handledeleteForm = async (formId) => {
   try {
     const response = await fetch(
-      `http://localhost:3000/auth/workspace/form/${formId}`,
+      `https://form-builder-vikram3.vercel.app/auth/workspace/form/${formId}`,
       {
         method: "DELETE",
       }
@@ -474,8 +474,7 @@ const handledeleteForm = async (formId) => {
   const handleShare = async () => {
     try {
       const response = await axios.post(
-        
-        `http://localhost:3000/auth/shareworkspace`,
+        `https://form-builder-vikram3.vercel.app/auth/shareworkspace`,
         {
           workspaceId,
           receiverEmail: email,
@@ -495,7 +494,7 @@ const handledeleteForm = async (formId) => {
     
       try {
         const response = await axios.post(
-          `http://localhost:3000/auth/generate-share-link`,
+          `https://form-builder-vikram3.vercel.app/auth/generate-share-link`,
           {
             workspaceId,
             accessLevel,

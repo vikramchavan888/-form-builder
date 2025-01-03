@@ -27,7 +27,7 @@ const DynamicFormEditor = () => {
     const fetchFormData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/auth/outsideforms/${formId}`
+          `https://form-builder-vikram3.vercel.app/auth/outsideforms/${formId}`
         );
         const { name, formdata, started, view, completed } = response.data;
         setFormName(name);
@@ -75,10 +75,13 @@ const DynamicFormEditor = () => {
 
   const handleSaveForm = async () => {
     try {
-      await axios.put(`http://localhost:3000/auth/outsideforms/${formId}`, {
-        name: formName,
-        formdata: addedItems,
-      });
+      await axios.put(
+        `https://form-builder-vikram3.vercel.app/auth/outsideforms/${formId}`,
+        {
+          name: formName,
+          formdata: addedItems,
+        }
+      );
       handleSuccess("Form updated successfully!");
     } catch (err) {
       console.error("Error updating form:", err);
@@ -114,7 +117,7 @@ const DynamicFormEditor = () => {
     const fetchChatHistory = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/auth/chat-history/${formId}`
+          `https://form-builder-vikram3.vercel.app/auth/chat-history/${formId}`
         );
         console.log("Chat History:", response.data.chatHistory); // Debugging line
         setChatHistory(response.data.chatHistory);
@@ -133,7 +136,7 @@ const DynamicFormEditor = () => {
     const fetchFormData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/auth/outsideforms/${formId}`
+          `https://form-builder-vikram3.vercel.app/auth/outsideforms/${formId}`
         );
         console.log("Form Data:", response.data.formdata); // Debugging line
         setFormData(response.data.formdata);

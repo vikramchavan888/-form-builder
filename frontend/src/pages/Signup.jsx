@@ -40,7 +40,7 @@ function Signup() {
      }
 
      try {
-       const url = `http://localhost:3000/auth/signup`;
+       const url = `https://form-builder-vikram3.vercel.app/auth/signup`;
        const response = await fetch(url, {
          method: "POST",
          headers: {

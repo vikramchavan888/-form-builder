@@ -18,13 +18,13 @@ const Chatbot = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:3000/auth/forms/${formId}`
+          `https://form-builder-vikram3.vercel.app/auth/forms/${formId}`
         );
         setFormData(response.data.formdata || []);
         setLoading(false);
         try {
           await axios.put(
-            `http://localhost:3000/auth/forms/${formId}/view`,
+            `https://form-builder-vikram3.vercel.app/auth/forms/${formId}/view`,
             {
               view: 1,
             }
@@ -103,15 +103,18 @@ const Chatbot = () => {
         };
 
         await axios.post(
-          "http://localhost:3000/auth/saveChatHistory",
+          "https://form-builder-vikram3.vercel.app/auth/saveChatHistory",
           chatData
         );
         console.log("Chat history saved successfully");
 
         // Optionally, you can update the status of the form or any other action
-        await axios.put(`http://localhost:3000/auth/forms/${formId}/start`, {
-          started: 1,
-        });
+        await axios.put(
+          `https://form-builder-vikram3.vercel.app/auth/forms/${formId}/start`,
+          {
+            started: 1,
+          }
+        );
       } catch (error) {
         console.error("Error saving chat history:", error);
       }
@@ -122,7 +125,7 @@ const Chatbot = () => {
   const submitchat = async () => {
     try {
       await axios.put(
-        `http://localhost:3000/auth/forms/${formId}/completed`,
+        `https://form-builder-vikram3.vercel.app/auth/forms/${formId}/completed`,
         {
           completed: 1,
         }
