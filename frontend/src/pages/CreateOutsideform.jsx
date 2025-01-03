@@ -434,80 +434,34 @@ const DynamicFormEditor = () => {
                         </th>
                       ))}
                     </tr>
-                    {chatHistory.history.map((session, sessionIndex) => {
-                      const sessionLength = filteredFormDataLength;
+                    {chatHistory?.history && chatHistory.history.length > 0 ? (
+                      chatHistory.history.map((session, sessionIndex) => {
+                        const sessionLength = filteredFormDataLength;
 
-                      const responses = session
-                        .filter((entry) => entry.type === "response")
-                        .map((entry) => entry.response || "");
-                      const paddedResponses = [
-                        ...responses,
-                        ...Array(sessionLength - responses.length).fill(""),
-                      ];
+                        const responses = session
+                          .filter((entry) => entry.type === "response")
+                          .map((entry) => entry.response || "");
+                        const paddedResponses = [
+                          ...responses,
+                          ...Array(sessionLength - responses.length).fill(""),
+                        ];
 
-                      return (
-                        <tr
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                          key={sessionIndex}
-                          ref={(el) => (sessionRefs.current[sessionIndex] = el)}
-                        >
-                          <th
-                            style={{
-                              padding: "10px",
-                              border: "1px solid #ddd",
-                              backgroundColor: "#18181B",
-                              width: "2rem",
-                              minHeight: "4rem",
-                              color: "white",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              borderRadius: "5px",
-                              overflowWrap: "break-word",
-                              wordWrap: "break-word",
-                              wordBreak: "break-word",
-                            }}
+                        return (
+                          <tr
+                            style={{ display: "flex", flexWrap: "wrap" }}
+                            key={sessionIndex}
+                            ref={(el) =>
+                              (sessionRefs.current[sessionIndex] = el)
+                            }
                           >
-                            {sessionIndex + 1}{" "}
-                          </th>
-
-                          <th
-                            className="submissiondate"
-                            style={{
-                              padding: "10px",
-                              border: "1px solid #ddd",
-                              backgroundColor: "#18181B",
-                              width: "10rem",
-                              minHeight: "4rem",
-                              color: "white",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              borderRadius: "5px",
-                              overflowWrap: "break-word",
-                              wordWrap: "break-word",
-                              wordBreak: "break-word",
-                            }}
-                          >
-                            {new Date(session[0].createdAt).toLocaleString(
-                              "en-US",
-                              {
-                                month: "short",
-                                day: "numeric",
-                                hour: "numeric",
-                                minute: "numeric",
-                                hour12: true,
-                              }
-                            )}
-                          </th>
-                          {paddedResponses.map((response, responseIndex) => (
+                            {/* Table rows and cells rendering responses */}
                             <th
-                              key={responseIndex}
                               style={{
                                 padding: "10px",
                                 border: "1px solid #ddd",
                                 backgroundColor: "#18181B",
-                                width: "10rem",
+                                width: "2rem",
+                                minHeight: "4rem",
                                 color: "white",
                                 display: "flex",
                                 alignItems: "center",
@@ -518,12 +472,66 @@ const DynamicFormEditor = () => {
                                 wordBreak: "break-word",
                               }}
                             >
-                              {response}
+                              {sessionIndex + 1}{" "}
                             </th>
-                          ))}
-                        </tr>
-                      );
-                    })}
+                            <th
+                              className="submissiondate"
+                              style={{
+                                padding: "10px",
+                                border: "1px solid #ddd",
+                                backgroundColor: "#18181B",
+                                width: "10rem",
+                                minHeight: "4rem",
+                                color: "white",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                borderRadius: "5px",
+                                overflowWrap: "break-word",
+                                wordWrap: "break-word",
+                                wordBreak: "break-word",
+                              }}
+                            >
+                              {new Date(session[0].createdAt).toLocaleString(
+                                "en-US",
+                                {
+                                  month: "short",
+                                  day: "numeric",
+                                  hour: "numeric",
+                                  minute: "numeric",
+                                  hour12: true,
+                                }
+                              )}
+                            </th>
+                            {paddedResponses.map((response, responseIndex) => (
+                              <th
+                                key={responseIndex}
+                                style={{
+                                  padding: "10px",
+                                  border: "1px solid #ddd",
+                                  backgroundColor: "#18181B",
+                                  width: "10rem",
+                                  color: "white",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  borderRadius: "5px",
+                                  overflowWrap: "break-word",
+                                  wordWrap: "break-word",
+                                  wordBreak: "break-word",
+                                }}
+                              >
+                                {response}
+                              </th>
+                            ))}
+                          </tr>
+                        );
+                      })
+                    ) : (
+                      <div className="no-chat-history">
+                        <h1>Loading</h1>
+                      </div>
+                    )}
                   </table>
                 </div>
               </div>
