@@ -82,17 +82,21 @@ justify-content: start;
 ;}
 
 .Add-New-folder-light{width: 11rem;font-family:'Roboto',sans-serif;
-
     height: 2.5rem;color: black;justify-content: center;display: flex;
-    border-radius: .5rem ;padding:.7rem .5rem .5rem 1rem;
-    background: #FFFFFF14;border: 1px solid #51424266
+    border-radius: .5rem ;padding:.7rem .5rem .5rem;
+   border: 1px solid #51424266
 ;}
 
 .home-folder-item{ cursor: pointer;    width: 13rem;display: flex;flex-direction: row;justify-content: space-between;
     height: 2.5rem;color: white;font-family:'Roboto',sans-serif;
-
     border-radius: .5rem ;padding:.5rem .5rem .5rem 1rem;
     background: #FFFFFF14
+;}
+
+.home-folder-item-light{ cursor: pointer;    width: 13rem;display: flex;flex-direction: row;justify-content: space-between;
+    height: 2.5rem;color: black;font-family:'Roboto',sans-serif;
+    border-radius: .5rem ;padding:.5rem .5rem .5rem 1rem;border: 1px solid #51424266
+  
 ;}
 
 
@@ -103,6 +107,12 @@ justify-content: start;
    background-color: white;
 color:black; 
 }
+.home-folder-item-light:hover {
+  background-color: rgb(56, 54, 54); color:white;}
+.home-folder-item-light.selected {
+   background-color: rgb(56, 54, 54); color:white;}
+
+
 
 .delete-form{position: absolute;padding: .2rem 0 0 .2rem;
   left: 14rem; bottom:16.5rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background-color: #5b5353;

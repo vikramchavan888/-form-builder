@@ -688,9 +688,9 @@ const handledeleteForm = async (formId) => {
           {folders.map((folder) => (
             <div
               key={folder._id}
-              className={`home-folder-item ${
-                selectedFolder === folder._id ? "selected" : ""
-              }`}
+              className={`${
+                dark ? "home-folder-item" : "home-folder-item-light"
+              } ${selectedFolder === folder._id ? "selected" : ""}`}
               onClick={() => selectfolder(folder._id)}
             >
               <p>{folder.name}</p>
