@@ -1,3 +1,10 @@
+.form-div-dark {
+  color: black;
+}
+
+.response-div-dark {
+  color: black;
+}
 
 
 
@@ -242,7 +249,7 @@ font-weight: 400;color: rgb(0, 0, 0);}
   margin-top: .5rem;padding-left: .5rem;
 }
 
-
+.bubble-input-outer-light img{width: 1rem;height: 1rem;margin-top: 1rem;}
 .bubble-input-outer img{width: 1rem;height: 1rem;margin-top: 1rem;}
 
 .darklight-mode-form{display: flex;flex-direction: row;color: #FFFFFFEB;right: 16rem;position: absolute;
