@@ -334,9 +334,16 @@ const DynamicFormEditor = () => {
               </div>
               <div>
                 {addedItems.map((item, index) => (
-                  <div key={index} className="form-added-item">
+                  <div
+                    key={index}
+                    className={
+                      dark ? "form-added-item" : "form-added-item-light"
+                    }
+                  >
                     <div
-                      className="delete-added-item"
+                      className={
+                        dark ? "delete-added-item" : "delete-added-item-light"
+                      }
                       onClick={() => handleDeleteItem(index)}
                     >
                       <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1734972398/delete_qwsqie.png" />

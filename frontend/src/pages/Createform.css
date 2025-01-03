@@ -202,6 +202,14 @@ height: 119px;background: #18181B;
 border-radius: 1rem; padding: 1rem;position: relative;
 margin-bottom: 1rem;
 }
+
+.form-added-item-light{width: 315px;
+height: 119px;background: #ffffff;
+border-radius: 1rem; padding: 1rem;position: relative;
+margin-bottom: 1rem;
+}
+
+
 .createform-header{height: 4rem;border-bottom: 1px solid #FFFFFF29;display: flex;flex-direction: row;}
 .createform-header-light{height: 4rem;border-bottom: 1px solid #65656969;display: flex;flex-direction: row;}
 
@@ -221,7 +229,7 @@ font-weight: 400;color: white;}
 }
 .bubble-input-outer img{width: 1rem;height: 1rem;margin-top: 1rem;}
 
-.darklight-mode-form{display: flex;flex-direction: row;color: #FFFFFFEB;right: 18rem;position: absolute;
+.darklight-mode-form{display: flex;flex-direction: row;color: #FFFFFFEB;right: 21rem;position: absolute;
 margin-top: 1rem;font-family:'Roboto',sans-serif;
 }
 .togglelable{margin: .4rem .5rem 0 .5rem;}
@@ -312,7 +320,7 @@ margin-top: 1rem;font-family:'Roboto',sans-serif;
 
     .form-name-light{position: absolute;
     top: .9rem;padding-left: 1rem;
-    border: 1px solid #37373E;
+    border: 1px solid #65656969;
     border-radius: .4rem;
     font-family: 'Roboto', sans-serif;
     left: 1%;color: rgb(0, 0, 0);
@@ -333,6 +341,11 @@ font-weight: 400;color: white;}
 
 .delete-added-item{position: absolute;padding: .2rem 0 0 .3rem;
   left: 19rem; bottom:6rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background-color: #5b5353;
+  cursor: pointer; }
+
+
+  .delete-added-item-light{position: absolute;padding: .2rem 0 0 .3rem;
+  left: 19rem; bottom:6rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background:white;
   cursor: pointer; }
   
 .heading-input-bubble{color: white; font-family:'Roboto',sans-serif;margin-bottom: 1rem;font-size: 20px;font-weight: 400;}
