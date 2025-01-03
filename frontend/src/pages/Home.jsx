@@ -1010,7 +1010,10 @@ const handledeleteForm = async (formId) => {
           )}
 
           {showoutsideformPopup && (
-            <div className="popup-content" ref={popupRef}>
+            <div
+              className={dark ? "popup-content" : "popup-content-light"}
+              ref={popupRef}
+            >
               <h1>Create New Form</h1>
               <input
                 type="text"
@@ -1046,7 +1049,7 @@ const handledeleteForm = async (formId) => {
                 )}
 
                 <button
-                  className="cancle-add-form"
+                  className={dark ? "cancle-add-form" : "cancle-add-form-light"}
                   onClick={() => setshowoutsideformPopup(false)}
                 >
                   Cancel

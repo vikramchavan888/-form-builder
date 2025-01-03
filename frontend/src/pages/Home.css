@@ -109,9 +109,9 @@ justify-content: start;
 color:black; 
 }
 .home-folder-item-light:hover {
-  background-color: rgb(56, 54, 54); color:white;}
+  background-color: rgba(56, 54, 54, 0.651); color:white;}
 .home-folder-item-light.selected {
-   background-color: rgb(56, 54, 54); color:white;}
+   background-color: rgba(56, 54, 54, 0.651); color:white;}
 
 
 
