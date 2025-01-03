@@ -23,7 +23,6 @@ const DynamicFormEditor = () => {
   const [View, setView] = useState();
   const [Completed, setCompleted] = useState();
 
-
   useEffect(() => {
     const fetchFormData = async () => {
       try {
@@ -43,7 +42,6 @@ const DynamicFormEditor = () => {
 
     fetchFormData();
   }, [formId]);
- 
 
   const copyToClipboard = async () => {
     const formLink = `https://form-builder-app-delta.vercel.app/formresponse/${formId}`;
@@ -177,34 +175,33 @@ const DynamicFormEditor = () => {
         (item) => item.identifier === "Responses" && item.type !== "button"
       )
     : [];
- const filteredFormDataLength = filteredFormData.length;
- console.log(filteredFormDataLength);
+  const filteredFormDataLength = filteredFormData.length;
+  console.log(filteredFormDataLength);
 
-const modifyColumnNames = (filteredFormData) => {
-  const countMap = {};
-  return filteredFormData.map((item) => {
-    const type = item.type;
-    if (countMap[type]) {
-      countMap[type] += 1;
-    } else {
-      countMap[type] = 1;
-    }
-    const modifiedType = `${type}  ${countMap[type] > 1 ? countMap[type] : 1}`;
-    return {
-      ...item,
-      type: modifiedType,
-    };
-  });
-};
+  const modifyColumnNames = (filteredFormData) => {
+    const countMap = {};
+    return filteredFormData.map((item) => {
+      const type = item.type;
+      if (countMap[type]) {
+        countMap[type] += 1;
+      } else {
+        countMap[type] = 1;
+      }
+      const modifiedType = `${type}  ${
+        countMap[type] > 1 ? countMap[type] : 1
+      }`;
+      return {
+        ...item,
+        type: modifiedType,
+      };
+    });
+  };
 
-const modifiedFilteredFormData = modifyColumnNames(filteredFormData);
+  const modifiedFilteredFormData = modifyColumnNames(filteredFormData);
   const value2 = Started;
   const value1 = Completed;
   const Completionrate = Math.floor((Completed / Started) * 100);
 
-
-
-  
   return (
     <div className="createform-container">
       <div className="createform-header">
@@ -437,24 +434,29 @@ const modifiedFilteredFormData = modifyColumnNames(filteredFormData);
                         </th>
                       ))}
                     </tr>
-                    {chatHistory.history.map((session, sessionIndex) => {
-                      const sessionLength = filteredFormDataLength;
+                    {chatHistory?.history && chatHistory.history.length > 0 ? (
+                      chatHistory.history.map((session, sessionIndex) => {
+                        const sessionLength = filteredFormDataLength;
 
-                      const responses = session
-                        .filter((entry) => entry.type === "response")
-                        .map((entry) => entry.response || "");
-                      const paddedResponses = [
-                        ...responses,
-                        ...Array(sessionLength - responses.length).fill(""),
-                      ];
-                      
-                      return (
-                        <tr
-                          style={{ display: "flex", flexWrap: "wrap" }}
-                          key={sessionIndex}
-                          ref={(el) => (sessionRefs.current[sessionIndex] = el)}
-                        >
-                         
+                        const responses = session
+                          .filter((entry) => entry.type === "response")
+                          .map((entry) => entry.response || "");
+                        const paddedResponses = [
+                          ...responses,
+                          ...Array(
+                            Math.max(0, sessionLength - responses.length)
+                          ).fill(""),
+                        ];
+
+                        return (
+                          <tr
+                            style={{ display: "flex", flexWrap: "wrap" }}
+                            key={sessionIndex}
+                            ref={(el) =>
+                              (sessionRefs.current[sessionIndex] = el)
+                            }
+                          >
+                            {/* Table rows and cells rendering responses */}
                             <th
                               style={{
                                 padding: "10px",
@@ -474,44 +476,14 @@ const modifiedFilteredFormData = modifyColumnNames(filteredFormData);
                             >
                               {sessionIndex + 1}{" "}
                             </th>
-                          
-                          <th
-                            className="submissiondate"
-                            style={{
-                              padding: "10px",
-                              border: "1px solid #ddd",
-                              backgroundColor: "#18181B",
-                              width: "10rem",
-                              minHeight: "4rem",
-                              color: "white",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              borderRadius: "5px",
-                              overflowWrap: "break-word",
-                              wordWrap: "break-word",
-                              wordBreak: "break-word",
-                            }}
-                          >
-                            {new Date(session[0].createdAt).toLocaleString(
-                              "en-US",
-                              {
-                                month: "short",
-                                day: "numeric",
-                                hour: "numeric",
-                                minute: "numeric",
-                                hour12: true,
-                              }
-                            )}
-                          </th>
-                          {paddedResponses.map((response, responseIndex) => (
                             <th
-                              key={responseIndex}
+                              className="submissiondate"
                               style={{
                                 padding: "10px",
                                 border: "1px solid #ddd",
                                 backgroundColor: "#18181B",
                                 width: "10rem",
+                                minHeight: "4rem",
                                 color: "white",
                                 display: "flex",
                                 alignItems: "center",
@@ -522,12 +494,46 @@ const modifiedFilteredFormData = modifyColumnNames(filteredFormData);
                                 wordBreak: "break-word",
                               }}
                             >
-                              {response}
+                              {new Date(session[0].createdAt).toLocaleString(
+                                "en-US",
+                                {
+                                  month: "short",
+                                  day: "numeric",
+                                  hour: "numeric",
+                                  minute: "numeric",
+                                  hour12: true,
+                                }
+                              )}
                             </th>
-                          ))}
-                        </tr>
-                      );
-                    })}
+                            {paddedResponses.map((response, responseIndex) => (
+                              <th
+                                key={responseIndex}
+                                style={{
+                                  padding: "10px",
+                                  border: "1px solid #ddd",
+                                  backgroundColor: "#18181B",
+                                  width: "10rem",
+                                  color: "white",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  borderRadius: "5px",
+                                  overflowWrap: "break-word",
+                                  wordWrap: "break-word",
+                                  wordBreak: "break-word",
+                                }}
+                              >
+                                {response}
+                              </th>
+                            ))}
+                          </tr>
+                        );
+                      })
+                    ) : (
+                      <div className="no-chat-history">
+                        <h1>Loading</h1>
+                      </div>
+                    )}
                   </table>
                 </div>
               </div>
