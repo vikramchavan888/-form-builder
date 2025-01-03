@@ -221,7 +221,7 @@ const DynamicFormEditor = () => {
             placeholder="Enter form name"
           />
         )}
-        <div className="darklight-mode">
+        <div className="darklight-mode-form">
           <h5 className={dark ? "togglelable" : "togglelable-light"}>Dark</h5>
           <input
             onClick={toggleDarkMode}
@@ -357,7 +357,11 @@ const DynamicFormEditor = () => {
 
                     {item.identifier === "Responses" ? (
                       item.type === "button" ? (
-                        <div className="bubble-input"></div>
+                        <div
+                          className={
+                            dark ? "bubble-input" : "bubble-input-light"
+                          }
+                        ></div>
                       ) : (
                         <p
                           style={{
@@ -374,7 +378,9 @@ const DynamicFormEditor = () => {
                       <div className="bubble-input-outer">
                         <img src={imagebubbleSrcMap[item.type]} />
                         <input
-                          className="bubble-input"
+                          className={
+                            dark ? "bubble-input" : "bubble-input-light"
+                          }
                           type="text"
                           required
                           value={item.content}
