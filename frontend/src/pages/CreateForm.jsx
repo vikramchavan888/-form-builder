@@ -211,10 +211,10 @@ const DynamicFormEditor = () => {
     <div
       className={dark ? "createform-container" : "createform-container-light"}
     >
-      <div className="createform-header">
+      <div className={dark ? "createform-header" : "createform-header-light"}>
         {showDiv === "form" && (
           <input
-            className=" form-name"
+            className={dark ? "form-name" : " form-name-light"}
             type="text"
             value={formName}
             onChange={(e) => setFormName(e.target.value)}
