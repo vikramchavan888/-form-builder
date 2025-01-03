@@ -443,7 +443,9 @@ const DynamicFormEditor = () => {
                           .map((entry) => entry.response || "");
                         const paddedResponses = [
                           ...responses,
-                          ...Array(sessionLength - responses.length).fill(""),
+                          ...Array(
+                            Math.max(0, sessionLength - responses.length)
+                          ).fill(""),
                         ];
 
                         return (
