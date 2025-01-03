@@ -22,6 +22,11 @@ const DynamicFormEditor = () => {
   const [Started, setStarted] = useState();
   const [View, setView] = useState();
   const [Completed, setCompleted] = useState();
+  const [dark, setdark] = useState(true); // Default to dark mode
+  
+     const toggleDarkMode = () => {
+       setdark((prevDark) => !prevDark); // Toggle between dark and light mode
+     };
 
   useEffect(() => {
     const fetchFormData = async () => {
@@ -214,13 +219,18 @@ const DynamicFormEditor = () => {
             placeholder="Enter form name"
           />
         )}
-        <div className="darklight-mode-form">
-          <h5>Light</h5>
-          <input type="checkbox" className="checkbox" id="checkbox" />
+        <div className="darklight-mode">
+          <h5 className={dark ? "togglelable" : "togglelable-light"}>Dark</h5>
+          <input
+            onClick={toggleDarkMode}
+            type="checkbox"
+            className="checkbox"
+            id="checkbox"
+          />
           <label htmlFor="checkbox" className="checkbox-label">
             <span className="ball"></span>
           </label>
-          <h5>Dark</h5>
+          <h5 className={dark ? "togglelable" : "togglelable-light"}>Light</h5>
         </div>
 
         <img
@@ -258,13 +268,14 @@ const DynamicFormEditor = () => {
       {showDiv === "form" && (
         <div className="form-workspace">
           <div className="creating-form">
-            <div className="bubble-and-input">
+           
+            <div  className={dark ? "bubble-and-input" : "bubble-and-input-light"}>
               <h2>Bubbles</h2>
               <div className="Bubbles">
                 {["text", "image", "gif", "video"].map((type) => (
                   <div
                     id="Bubble "
-                    className={`${type}-button`}
+                    className={`${type}-button${dark ? "" : "-light"}`}
                     key={type}
                     onClick={() => handleAddItem("Bubble ", type)}
                   >
@@ -339,7 +350,7 @@ const DynamicFormEditor = () => {
                       )
                     ) : (
                       <div className="bubble-input-outer">
-                        <img src={imagebubbleSrcMap[item.type]}  />
+                        <img src={imagebubbleSrcMap[item.type]} />
                         <input
                           className="bubble-input"
                           type="text"

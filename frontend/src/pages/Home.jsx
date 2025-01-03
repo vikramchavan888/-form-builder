@@ -465,12 +465,6 @@ const handledeleteForm = async (formId) => {
 
 
 
-
-
-  // Function to fetch all folders in the workspace
-  
-  // Function to  Share workspace
- 
   const handleShare = async () => {
     try {
       const response = await axios.post(

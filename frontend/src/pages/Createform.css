@@ -5,6 +5,11 @@
   border: 1px solid #FFFFFF29;border-radius: .7rem;
 }
 
+.bubble-and-input-light{padding: 1.5rem;width: 24rem; background: #ffffff;margin: 1rem 0 1rem 1rem;min-height: 84vh;
+  border: 1px solid #FFFFFF29;border-radius: .7rem;
+}
+
+
 .creating-form{ width: 100%;display: flex;flex-direction: row;}
 .form-preview{width: 24rem; margin-left: 20rem;}
 
@@ -19,6 +24,18 @@
   padding-top: .5rem;
   background: #FFFFFF14;
 }
+
+
+.text-button-light ,.gif-button-light,.image-button-light ,.video-button,.button-button-light,
+.number-button-light ,.phone-button-light,.email-button-light ,.rating-button-light,.date-button-light
+{border-radius: .5rem ;
+  height: 40px;cursor: pointer;
+  width: 10rem;border: 1px solid #65656969;
+  padding-top: .5rem;
+  background: white;
+}
+
+
 .button-button span
 {margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
 font-size: 1rem;
@@ -135,7 +152,8 @@ font-weight: 400;color: white;}
 .darklight-mode-form{display: flex;flex-direction: row;color: #FFFFFFEB;right: 16rem;position: absolute;
 margin-top: 1rem;font-family:'Roboto',sans-serif;
 }
-.darklight-mode-form h5{margin: .4rem .5rem 0 .5rem;}
+.togglelable{margin: .4rem .5rem 0 .5rem;}
+.togglelable-light{margin: .4rem .5rem 0 .5rem;color: black;}
 
 .share-form{width: 4rem;position: absolute;right: 10rem;
    padding: 0;
