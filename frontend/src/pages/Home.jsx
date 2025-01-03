@@ -946,7 +946,12 @@ const handledeleteForm = async (formId) => {
           )}
 
           {showDeletefolderPopup && (
-            <div className="popup-content-delete" ref={popupRef}>
+            <div
+              className={
+                dark ? "popup-content-delete" : "popup-content-delete-light"
+              }
+              ref={popupRef}
+            >
               <h1>Are you sure you want to delete this folder?</h1>
               <div className="popup-delete-buttons">
                 <button
@@ -960,7 +965,7 @@ const handledeleteForm = async (formId) => {
                   Confirm
                 </button>
                 <button
-                  className="cancle-add-form"
+                  className={dark ? "cancle-add-form" : "cancle-add-form-light"}
                   onClick={() => {
                     setshowDeletefolderPopup(false);
                     setSelectedFolder(null);
