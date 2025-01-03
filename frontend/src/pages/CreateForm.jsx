@@ -295,7 +295,7 @@ const DynamicFormEditor = () => {
                     key={type}
                     onClick={() => handleAddItem("Responses", type)}
                   >
-                    <img src={imageinputSrcMap[type]} alt={type} />
+                    <img src={imageinputSrcMap[item.type]}  />
                     <span>{type.charAt(0).toUpperCase() + type.slice(1)}</span>
                   </div>
                 ))}
@@ -339,7 +339,7 @@ const DynamicFormEditor = () => {
                       )
                     ) : (
                       <div className="bubble-input-outer">
-                        <img src={imageinputSrcMap[type]} alt={type} />
+                        <img src={} alt={type} />
                         <input
                           className="bubble-input"
                           type="text"
