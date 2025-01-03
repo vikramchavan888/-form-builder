@@ -191,7 +191,9 @@ font-weight: 400;color: black;}
 .createform-container{ background: #1F1F23;
   height: auto; 
   min-height: 110vh;}
-
+.createform-container-light{ background: #ffffff;
+  height: auto; 
+  min-height: 110vh;}
 
   
 
@@ -318,7 +320,8 @@ font-weight: 400;color: white;}
   left: 19rem; bottom:6rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background-color: #5b5353;
   cursor: pointer; }
   
-h2{color: white; font-family:'Roboto',sans-serif;margin-bottom: 1rem;font-size: 20px;font-weight: 400;}
+.heading-input-bubble{color: white; font-family:'Roboto',sans-serif;margin-bottom: 1rem;font-size: 20px;font-weight: 400;}
+.heading-input-bubble-light{color: rgb(0, 0, 0); font-family:'Roboto',sans-serif;margin-bottom: 1rem;font-size: 20px;font-weight: 400;}
 
 .form-workspace-statistics{width: 24rem;display: flex;flex-direction: row;justify-content: space-between;
 height: 6rem; margin: 4rem 0 0 30rem;

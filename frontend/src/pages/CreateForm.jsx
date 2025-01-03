@@ -208,7 +208,9 @@ const DynamicFormEditor = () => {
   const Completionrate = Math.floor((Completed / Started) * 100);
 
   return (
-    <div className="createform-container">
+    <div
+      className={dark ? "createform-container" : "createform-container-light"}
+    >
       <div className="createform-header">
         {showDiv === "form" && (
           <input
@@ -271,7 +273,13 @@ const DynamicFormEditor = () => {
             <div
               className={dark ? "bubble-and-input" : "bubble-and-input-light"}
             >
-              <h2>Bubbles</h2>
+              <h2
+                className={
+                  dark ? "heading-input-bubble" : "heading-input-bubble-light"
+                }
+              >
+                Bubbles
+              </h2>
               <div className="Bubbles">
                 {["text", "image", "gif", "video"].map((type) => (
                   <div
@@ -290,7 +298,13 @@ const DynamicFormEditor = () => {
                 ))}
               </div>
 
-              <h2>Inputs</h2>
+              <h2
+                className={
+                  dark ? "heading-input-bubble" : "heading-input-bubble-light"
+                }
+              >
+                Inputs
+              </h2>
               <div className="Bubbles">
                 {[
                   "text",
