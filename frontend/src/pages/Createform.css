@@ -5,11 +5,6 @@
   border: 1px solid #FFFFFF29;border-radius: .7rem;
 }
 
-.bubble-and-input-light{padding: 1.5rem;width: 24rem; background: #ffffff;margin: 1rem 0 1rem 1rem;min-height: 84vh;
-  border: 1px solid #FFFFFF29;border-radius: .7rem;
-}
-
-
 .creating-form{ width: 100%;display: flex;flex-direction: row;}
 .form-preview{width: 24rem; margin-left: 20rem;}
 
@@ -25,8 +20,7 @@
   background: #FFFFFF14;
 }
 
-
-.text-button-light ,.gif-button-light,.image-button-light ,.video-button-light,.button-button-light,
+.text-button-light ,.gif-button-light,.image-v ,.video-button-light,.button-button-light,
 .number-button-light ,.phone-button-light,.email-button-light ,.rating-button-light,.date-button-light
 {border-radius: .5rem ;
   height: 40px;cursor: pointer;
@@ -34,30 +28,8 @@
   padding-top: .5rem;
   background: white;
 }
-.button-button-light span
-{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
-font-size: 1rem;
-font-weight: 400;color:black;}
-.number-button-light span
-{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
-font-size: 1rem;
-font-weight: 400;color: black;}
-.email-button-light span
-{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
-font-size: 1rem;
-font-weight: 400;color: black;}
-.phone-button-light span
-{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
-font-size: 1rem;
-font-weight: 400;color: black;}
-.date-button-light span
-{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
-font-size: 1rem;
-font-weight: 400;color: black;}
-.rating-button-light span
-{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
-font-size: 1rem;
-font-weight: 400;color: black;}
+
+
 
 
 .button-button span
@@ -86,20 +58,30 @@ font-size: 1rem;
 font-weight: 400;color: white;}
 
 
-.button-button-light img
-{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
-.phone-button-light img
-{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
-.email-button-light img
-{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
-.number-button-light img
-{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
-.date-button-light img
-{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
-.rating-button-light img
-{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
-
-
+.button-button-light span
+{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
+font-size: 1rem;
+font-weight: 400;color: black;}
+.number-button-light span
+{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
+font-size: 1rem;
+font-weight: 400;color: black;}
+.email-button-light span
+{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
+font-size: 1rem;
+font-weight: 400;color: black;}
+.phone-button-light span
+{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
+font-size: 1rem;
+font-weight: 400;color: black;}
+.date-button-light span
+{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
+font-size: 1rem;
+font-weight: 400;color: black;}
+.rating-button-light span
+{margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
+font-size: 1rem;
+font-weight: 400;color: black;}
 
 
 .button-button img
@@ -116,71 +98,76 @@ font-weight: 400;color: white;}
 { position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
 
 
+
+.button-button-light img
+{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
+.phone-button-light img
+{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
+.email-button-light img
+{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
+.number-button-light img
+{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
+.date-button-light img
+{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
+.rating-button-light img
+{ position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
+
+
+
+
 .text-button span
 {margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
 font-size: 1rem;
 font-weight: 400;color: white;}
-
 .gif-button span
 {margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
 font-size: 1rem;
 font-weight: 400;color: white;}
-
 .image-button span
 {margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
 font-size: 1rem;
 font-weight: 400;color: white;}
-
 .video-button span
 {margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
 font-size: 1rem;
 font-weight: 400;color: white;}
 
 
+
+
 .text-button-light span
 {margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
 font-size: 1rem;
 font-weight: 400;color: black;}
-
 .gif-button-light span
 {margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
 font-size: 1rem;
 font-weight: 400;color: black;}
-
 .image-button-light span
 {margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
 font-size: 1rem;
 font-weight: 400;color: black;}
-
 .video-button-light span
 {margin: .1rem .3rem 0  3rem;position: absolute;font-family:'Roboto',sans-serif;
 font-size: 1rem;
 font-weight: 400;color: black;}
 
 
-
-
-.text-button-light img
+.text-button img
 { position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
-
-.gif-button-light img
+.gif-button img
 { position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
-
-.video-button-light img
+.video-button img
 { position: absolute;margin: .1rem .3rem 0  1.5rem; border: none;}
-
-.image-button-light img
+.image-button img
 { position: absolute;margin: .1rem .3rem 0  1.5rem; border: none;}
 
 .text-button-light img
 { position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
-
 .gif-button-light img
 { position: absolute;margin: .3rem .3rem 0  1.5rem; border: none;}
-
 .video-button-light img
 { position: absolute;margin: .1rem .3rem 0  1.5rem; border: none;}
-
 .image-button-light img
 { position: absolute;margin: .1rem .3rem 0  1.5rem; border: none;}
 
