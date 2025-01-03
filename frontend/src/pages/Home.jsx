@@ -973,7 +973,8 @@ const handledeleteForm = async (formId) => {
           )}
 
           {showPopup && (
-            <div className="popup-content" ref={popupRef}>
+         
+            <div className={dark ? "popup-content" : "popup-content-light"} ref={popupRef}>
               <h1>Create New Folder</h1>
               <input
                 type="text"

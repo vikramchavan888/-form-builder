@@ -139,7 +139,7 @@ color:black;
     height: 18rem;position: relative;
     color: rgb(0, 0, 0);
     justify-content: center;
-    display: flex;  border: 1px solid #5b5353;
+    display: flex;  border: 1px solid #51424266;
      font-family:'Roboto',sans-serif;
     border-radius: .5rem;
     flex-direction: column;
@@ -171,6 +171,10 @@ justify-content: start;font-family:'Roboto',sans-serif;
 .popup-content input{width: 100%;border-radius: .5rem ;border: none;height:  3rem;padding: 1rem;color: white;
     background: #FFFFFF14;margin-top: 2rem;}
 
+
+
+
+
 .workspace-dropdown{position: absolute;
   top: .75rem; font-family:'Roboto',sans-serif;
   left: 50%; 
@@ -185,6 +189,18 @@ border: 1px solid #47474A;position: fixed;
   width: 40%;height: 18rem;
   text-align: start;background: #1F1F23;
 }
+
+.popup-content-light {
+border: 1px solid #47474A;position: fixed;
+  padding: 25px;z-index: 1;left: 29%;
+  border-radius: 1.5rem;display: flex;flex-direction: column;
+  width: 40%;height: 18rem;
+  text-align: start;background: white;
+}
+
+.popup-content-light input{width: 100%;border-radius: .5rem ;border: none;height:  3rem;padding: 1rem;color: rgb(0, 0, 0);
+    background:white;margin-top: 2rem;}
+
 
 
 .popup-content-delete{border: 1px solid #47474A;position: fixed;
@@ -210,7 +226,14 @@ line-height: 41px;}
 .popup-content h1 {margin-top: 1rem;
   margin-bottom: 10px;color: white;
   font-family:'Roboto',sans-serif;
+font-size: 27.33px;
+font-weight: 500;
+line-height: 41px;
+}
 
+.popup-content-light h1 {margin-top: 1rem;
+  margin-bottom: 10px;color: rgb(0, 0, 0);
+  font-family:'Roboto',sans-serif;
 font-size: 27.33px;
 font-weight: 500;
 line-height: 41px;
