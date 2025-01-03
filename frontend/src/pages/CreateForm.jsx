@@ -349,12 +349,15 @@ const DynamicFormEditor = () => {
                       <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1734972398/delete_qwsqie.png" />
                     </div>
 
-                    <label className="added-item-name">
+                    <label
+                      className={
+                        dark ? "added-item-name" : "added-item-name-light"
+                      }
+                    >
                       {item.identifier === "Responses"
                         ? `Input ${item.type}`
                         : item.type}
                     </label>
-
                     {item.identifier === "Responses" ? (
                       item.type === "button" ? (
                         <div
@@ -375,7 +378,13 @@ const DynamicFormEditor = () => {
                         </p>
                       )
                     ) : (
-                      <div className="bubble-input-outer">
+                      <div
+                        className={
+                          dark
+                            ? "bubble-input-outer"
+                            : "bubble-input-outer-light"
+                        }
+                      >
                         <img src={imagebubbleSrcMap[item.type]} />
                         <input
                           className={
