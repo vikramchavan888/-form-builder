@@ -372,7 +372,9 @@ const DynamicFormEditor = () => {
                       item.type === "button" ? (
                         <div
                           className={
-                            dark ? "bubble-input" : "bubble-input-light"
+                            dark
+                              ? "bubble-inputbuble"
+                              : "bubble-inputbuble-light"
                           }
                         ></div>
                       ) : (
