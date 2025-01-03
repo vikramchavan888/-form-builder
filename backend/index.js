@@ -8,11 +8,12 @@ require("dotenv").config();
 require("./Configuration/db");
 const PORT = process.env.PORT;
 
-const corsOptions = {
-  origin: "https://form-builder-app-delta.vercel.app",
-};
-
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  })
+);
 
 
 
