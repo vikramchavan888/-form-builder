@@ -118,7 +118,7 @@ color:black;
   left: 14rem; bottom:16.5rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background-color: #5b5353;
   cursor: pointer; }
 .delete-form-light{position: absolute;padding: .2rem 0 0 .2rem;
-  left: 14rem; bottom:16.5rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background-color: #ffffff;
+  left: 14rem; bottom:16.5rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background: #ffffff;
   cursor: pointer; }
 
 .home-form-item{width: 15rem;
@@ -137,7 +137,7 @@ color:black;
     height: 18rem;position: relative;
     color: rgb(0, 0, 0);
     justify-content: center;
-    display: flex;  
+    display: flex;  border: 1px solid #5b5353;
      font-family:'Roboto',sans-serif;
     border-radius: .5rem;
     flex-direction: column;
@@ -191,12 +191,25 @@ border: 1px solid #47474A;position: fixed;
   width: 32%;height: 13rem;
   text-align: center;background: #1F1F23;}
 
+  .popup-content-delete-light{border: 1px solid #47474A;position: fixed;
+  padding: 25px;z-index: 1;left: 29%;
+  border-radius: 1.5rem;display: flex;flex-direction: column;
+  width: 32%;height: 13rem;
+  text-align: center;background:white;}
+
   .popup-content-delete h1{
   margin-bottom: 10px;color: white;
   font-family:'Roboto',sans-serif;
 font-size: 27.33px;
 font-weight: 500;
 line-height: 41px;}
+  .popup-content-delete-light h1{
+  margin-bottom: 10px;color: rgb(0, 0, 0);
+  font-family:'Roboto',sans-serif;
+font-size: 27.33px;
+font-weight: 500;
+line-height: 41px;}
+
 
 
 .popup-content h1 {margin-top: 1rem;
@@ -239,6 +252,15 @@ line-height: 41px;
   cursor: pointer;
 }
 
+
+.cancle-add-form-light {width: 50%;
+  padding: 10px; font-family:'Roboto',sans-serif;
+
+ border: none;
+  font-size: 1.5rem;font-weight: 500;
+  color: rgb(0, 0, 0);background: transparent;
+  cursor: pointer;
+}
 
 
 button {

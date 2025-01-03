@@ -704,7 +704,7 @@ const handledeleteForm = async (formId) => {
                 style={{
                   cursor: authority === "View" ? "not-allowed" : "pointer",
                 }}
-                className={dark ? "delete-folder" : "delete-form-light"}
+                className={dark ? "delete-folder" : "delete-folder-light"}
               >
                 <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1734972398/delete_qwsqie.png" />
               </div>
@@ -753,7 +753,6 @@ const handledeleteForm = async (formId) => {
             <div
               key={forms._id}
               className={dark ? "home-form-item" : "home-form-item-light"}
-             
               onClick={() => {
                 selectform(forms._id);
 
@@ -788,7 +787,9 @@ const handledeleteForm = async (formId) => {
           ))}
 
           {showDeleteformPopup && (
-            <div className="popup-content-delete" ref={popupRef}>
+           
+             <div className={dark ? "popup-content-delete" : "popup-content-delete-light"}
+            ref={popupRef}>
               <h1>Are you sure you want to delete this form?</h1>
               <div className="popup-delete-buttons">
                 {selectedFolder ? (
@@ -820,7 +821,7 @@ const handledeleteForm = async (formId) => {
                 )}
 
                 <button
-                  className="cancle-add-form"
+                 className={dark ? "cancle-add-form" : "cancle-add-form-light"}
                   onClick={() => {
                     setshowDeleteformPopup(false);
                     setSelectedForm(null);
