@@ -704,7 +704,7 @@ const handledeleteForm = async (formId) => {
                 style={{
                   cursor: authority === "View" ? "not-allowed" : "pointer",
                 }}
-                className="delete-folder"
+                className={dark ? "delete-folder" : "delete-form-light"}
               >
                 <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1734972398/delete_qwsqie.png" />
               </div>
@@ -752,7 +752,8 @@ const handledeleteForm = async (formId) => {
           {outsideforms.map((forms) => (
             <div
               key={forms._id}
-              className="home-form-item"
+              className={dark ? "home-form-item" : "home-form-item-light"}
+             
               onClick={() => {
                 selectform(forms._id);
 

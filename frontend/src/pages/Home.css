@@ -117,20 +117,36 @@ color:black;
 .delete-form{position: absolute;padding: .2rem 0 0 .2rem;
   left: 14rem; bottom:16.5rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background-color: #5b5353;
   cursor: pointer; }
-
+.delete-form-light{position: absolute;padding: .2rem 0 0 .2rem;
+  left: 14rem; bottom:16.5rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background-color: #ffffff;
+  cursor: pointer; }
 
 .home-form-item{width: 15rem;
     height: 18rem;position: relative;
     color: white;
     justify-content: center;
-    display: flex
-;font-family:'Roboto',sans-serif;
-
+    display: flex;  
+     font-family:'Roboto',sans-serif;
     border-radius: .5rem;
     flex-direction: column;
     text-align: center;
    background: #FFFFFF80;
 }
+
+.home-form-item-light{width: 15rem;
+    height: 18rem;position: relative;
+    color: rgb(0, 0, 0);
+    justify-content: center;
+    display: flex;  
+     font-family:'Roboto',sans-serif;
+    border-radius: .5rem;
+    flex-direction: column;
+    text-align: center;
+   background: #ffffff80;
+}
+
+
+
 .home-form{margin: 0 10% 0 10%; width: 80%; display: flex;flex-direction: row;
 justify-content: start;font-family:'Roboto',sans-serif;
 
@@ -146,6 +162,7 @@ justify-content: start;font-family:'Roboto',sans-serif;
 }
 
 .add-svg{margin-bottom: 2rem;}
+
 .Create-a-typebot{font-size: 1.2rem;}
 
 
