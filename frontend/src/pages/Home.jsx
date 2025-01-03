@@ -598,6 +598,76 @@ const handledeleteForm = async (formId) => {
     }),
   };
 
+  const lightStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      backgroundColor: "white",
+      color: "black",
+      borderWidth: "1px",
+      borderColor: "#47474A",
+      borderRadius: "5px",
+      padding: "1px",
+      height: "2rem",
+      cursor: "pointer",
+      boxShadow: "none",
+      "&:hover": {
+        borderColor: "#4c4c4c",
+      },
+    }),
+
+    menu: (provided) => ({
+      ...provided,
+      backgroundColor: "white",
+      fontWeight: "500",
+      borderRadius: " 0 0 .5rem .5rem",
+      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+      border: "1px solid #333333",
+      marginTop: 0,
+    }),
+    option: (provided, state) => {
+      const isLastOption = state.data === options[options.length - 1];
+      return {
+        ...provided,
+        color: "black",
+        backgroundColor: "white",
+        padding: "10px 15px",
+        cursor: "pointer",
+        ...(isLastOption && {
+          borderRadius: " 0 0 .5rem .5rem",
+          backgroundColor: "white",
+          color: "#FFA54C",
+        }),
+        "&:hover": {
+          backgroundColor: "#3333336c",
+        },
+      };
+    },
+    placeholder: (provided) => ({
+      ...provided,
+      color: "#aaaaaa",
+      fontSize: "14px",
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: "#ffffff",
+      fontSize: "14px",
+      fontWeight: "500",
+    }),
+    dropdownIndicator: (provided, state) => ({
+      ...provided,
+      color: "#ffffff",
+      transform: state.selectProps.menuIsOpen
+        ? "rotate(180deg)"
+        : "rotate(0deg)",
+      "&:hover": {
+        color: "#ffffff",
+      },
+    }),
+    indicatorSeparator: () => ({
+      display: "none",
+    }),
+  };
+
 
   return (
     <>
@@ -609,7 +679,7 @@ const handledeleteForm = async (formId) => {
             ) : (
               <Select
                 options={options}
-                styles={customStyles}
+                styles={dark ? customStyles : lightStyles}
                 defaultValue={options[0]}
                 onChange={handleWorkspaceChange}
               />
