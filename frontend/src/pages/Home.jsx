@@ -602,7 +602,7 @@ const handledeleteForm = async (formId) => {
   return (
     <>
       <div className={dark ? "home-container" : "home-container-light"}>
-        <div className="home-header">
+        <div className={dark ? "home-header" : "home-header-light"}>
           <div className="workspace-dropdown">
             {loading ? (
               <p>Loading...</p>
@@ -643,7 +643,7 @@ const handledeleteForm = async (formId) => {
         </div>
         <div className="home-folder">
           <div
-            className="Add-New-folder"
+            className={dark ? "Add-New-folder" : "Add-New-folder-light"}
             onClick={() => {
               if (authority !== "View") {
                 setShowPopup(true);
