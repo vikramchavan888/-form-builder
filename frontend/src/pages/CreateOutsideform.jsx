@@ -22,6 +22,11 @@ const DynamicFormEditor = () => {
   const [Started, setStarted] = useState();
   const [View, setView] = useState();
   const [Completed, setCompleted] = useState();
+  const [dark, setdark] = useState(true); // Default to dark mode
+
+  const toggleDarkMode = () => {
+    setdark((prevDark) => !prevDark); // Toggle between dark and light mode
+  };
 
   useEffect(() => {
     const fetchFormData = async () => {
@@ -203,11 +208,13 @@ const DynamicFormEditor = () => {
   const Completionrate = Math.floor((Completed / Started) * 100);
 
   return (
-    <div className="createform-container">
-      <div className="createform-header">
+    <div
+      className={dark ? "createform-container" : "createform-container-light"}
+    >
+      <div className={dark ? "createform-header" : "createform-header-light"}>
         {showDiv === "form" && (
           <input
-            className=" form-name"
+            className={dark ? "form-name" : " form-name-light"}
             type="text"
             value={formName}
             onChange={(e) => setFormName(e.target.value)}
@@ -215,12 +222,17 @@ const DynamicFormEditor = () => {
           />
         )}
         <div className="darklight-mode-form">
-          <h5>Light</h5>
-          <input type="checkbox" className="checkbox" id="checkbox" />
+          <h5 className={dark ? "togglelable" : "togglelable-light"}>Dark</h5>
+          <input
+            onClick={toggleDarkMode}
+            type="checkbox"
+            className="checkbox"
+            id="checkbox"
+          />
           <label htmlFor="checkbox" className="checkbox-label">
             <span className="ball"></span>
           </label>
-          <h5>Dark</h5>
+          <h5 className={dark ? "togglelable" : "togglelable-light"}>Light</h5>
         </div>
 
         <img
@@ -239,15 +251,25 @@ const DynamicFormEditor = () => {
         </button>
 
         <div
-          className={showDiv === "form" ? "form-div-selected" : "form-div"}
+          className={`${
+            showDiv === "form"
+              ? "form-div-selected"
+              : dark
+              ? "form-div"
+              : "form-div-dark"
+          }`}
           onClick={() => setShowDiv("form")}
         >
           Flow
         </div>
         <div
-          className={
-            showDiv === "response" ? "response-div-selected" : "response-div"
-          }
+          className={`${
+            showDiv === "response"
+              ? "response-div-selected"
+              : dark
+              ? "response-div"
+              : "response-div-dark"
+          }`}
           onClick={async () => {
             setShowDiv("response");
           }}
@@ -258,13 +280,21 @@ const DynamicFormEditor = () => {
       {showDiv === "form" && (
         <div className="form-workspace">
           <div className="creating-form">
-            <div className="bubble-and-input">
-              <h2>Bubbles</h2>
+            <div
+              className={dark ? "bubble-and-input" : "bubble-and-input-light"}
+            >
+              <h2
+                className={
+                  dark ? "heading-input-bubble" : "heading-input-bubble-light"
+                }
+              >
+                Bubbles
+              </h2>
               <div className="Bubbles">
                 {["text", "image", "gif", "video"].map((type) => (
                   <div
                     id="Bubble "
-                    className={`${type}-button`}
+                    className={`${type}-button${dark ? "" : "-light"}`}
                     key={type}
                     onClick={() => handleAddItem("Bubble ", type)}
                   >
@@ -278,7 +308,13 @@ const DynamicFormEditor = () => {
                 ))}
               </div>
 
-              <h2>Inputs</h2>
+              <h2
+                className={
+                  dark ? "heading-input-bubble" : "heading-input-bubble-light"
+                }
+              >
+                Inputs
+              </h2>
               <div className="Bubbles">
                 {[
                   "text",
@@ -291,7 +327,7 @@ const DynamicFormEditor = () => {
                 ].map((type) => (
                   <div
                     id="Responses"
-                    className={`${type}-button`}
+                    className={`${type}-button${dark ? "" : "-light"}`}
                     key={type}
                     onClick={() => handleAddItem("Responses", type)}
                   >
@@ -308,23 +344,37 @@ const DynamicFormEditor = () => {
               </div>
               <div>
                 {addedItems.map((item, index) => (
-                  <div key={index} className="form-added-item">
+                  <div
+                    key={index}
+                    className={
+                      dark ? "form-added-item" : "form-added-item-light"
+                    }
+                  >
                     <div
-                      className="delete-added-item"
+                      className={
+                        dark ? "delete-added-item" : "delete-added-item-light"
+                      }
                       onClick={() => handleDeleteItem(index)}
                     >
                       <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1734972398/delete_qwsqie.png" />
                     </div>
 
-                    <label className="added-item-name">
+                    <label
+                      className={
+                        dark ? "added-item-name" : "added-item-name-light"
+                      }
+                    >
                       {item.identifier === "Responses"
                         ? `Input ${item.type}`
                         : item.type}
                     </label>
-
                     {item.identifier === "Responses" ? (
                       item.type === "button" ? (
-                        <div className="bubble-input"></div>
+                        <div
+                          className={
+                            dark ? "bubble-input" : "bubble-input-light"
+                          }
+                        ></div>
                       ) : (
                         <p
                           style={{
@@ -338,16 +388,27 @@ const DynamicFormEditor = () => {
                         </p>
                       )
                     ) : (
-                      <input
-                        className="bubble-input"
-                        type="text"
-                        required
-                        value={item.content}
-                        onChange={(e) =>
-                          handleBubbleContentChange(index, e.target.value)
+                      <div
+                        className={
+                          dark
+                            ? "bubble-input-outer"
+                            : "bubble-input-outer-light"
                         }
-                        placeholder={`Enter ${item.type} content`}
-                      />
+                      >
+                        <img src={imagebubbleSrcMap[item.type]} />
+                        <input
+                          className={
+                            dark ? "bubble-input" : "bubble-input-light"
+                          }
+                          type="text"
+                          required
+                          value={item.content}
+                          onChange={(e) =>
+                            handleBubbleContentChange(index, e.target.value)
+                          }
+                          placeholder={`Enter ${item.type} content`}
+                        />
+                      </div>
                     )}
                   </div>
                 ))}
