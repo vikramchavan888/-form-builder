@@ -82,3 +82,27 @@ overflow: hidden;overflow-x: scroll;}
 .main-chathistory-div{padding: 20px; max-width: 900px; margin:  0 300px 100px 300px ;position: relative;}
 
 .renderContent-user{display: flex;flex-direction: row;position: absolute; right: 18px;}
+
+.submission-message-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+}
+
+.submission-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

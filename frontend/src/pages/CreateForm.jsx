@@ -46,7 +46,7 @@ const DynamicFormEditor = () => {
  
 
   const copyToClipboard = async () => {
-    const formLink = `http://localhost:5173/formresponse/${formId}`;
+    const formLink = `https://form-builder-app-delta.vercel.app/formresponse/${formId}`;
     try {
       await navigator.clipboard.writeText(formLink);
       handleSuccess("Link copied to clipboard!");

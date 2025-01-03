@@ -12,6 +12,7 @@ const Chatbot = () => {
   const [loading, setLoading] = useState(true);
   const [displayedItems, setDisplayedItems] = useState([]);
   const [selectedRating, setSelectedRating] = useState(null);
+  const [submissionMessage, setSubmissionMessage] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -125,12 +126,15 @@ const Chatbot = () => {
   const submitchat = async () => {
     try {
       await axios.put(
-        `https://form-builder-vikram3.vercel.app/auth/forms/${formId}/completed`,
+        `https://form-builder-vikram3.vercel.app/auth/outforms/${formId}/completed`,
         {
           completed: 1,
         }
       );
-    } catch (error) {}
+      setSubmissionMessage("Thank you for submitting the form!");
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+    }
   };
 
   const renderContent = (item) => {
@@ -366,9 +370,14 @@ const Chatbot = () => {
   }
 
   return (
-    <div className="main-chathistory-div" >
+    <div className="main-chathistory-div">
       <div>{renderChatHistory()}</div>
       {renderCurrentItem()}
+      {submissionMessage && (
+        <div className="submission-message-overlay">
+          <div className="submission-message">{submissionMessage}</div>
+        </div>
+      )}
     </div>
   );
 };

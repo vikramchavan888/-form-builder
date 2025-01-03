@@ -12,6 +12,8 @@ const Chatbot = () => {
   const [loading, setLoading] = useState(true);
   const [displayedItems, setDisplayedItems] = useState([]);
   const [selectedRating, setSelectedRating] = useState(null);
+  const [submissionMessage, setSubmissionMessage] = useState("");
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -129,8 +131,12 @@ const Chatbot = () => {
           completed: 1,
         }
       );
-    } catch (error) {}
+      setSubmissionMessage("Thank you for submitting the form!");
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+    }
   };
+
 
   const renderContent = (item) => {
     if (item.identifier === "Responses") {
@@ -356,6 +362,11 @@ const Chatbot = () => {
     <div className="main-chathistory-div">
       <div>{renderChatHistory()}</div>
       {renderCurrentItem()}
+      {submissionMessage && (
+        <div className="submission-message-overlay">
+          <div className="submission-message">{submissionMessage}</div>
+        </div>
+      )}
     </div>
   );
 };
