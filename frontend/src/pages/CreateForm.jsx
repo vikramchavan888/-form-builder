@@ -338,16 +338,19 @@ const DynamicFormEditor = () => {
                         </p>
                       )
                     ) : (
-                      <input
-                        className="bubble-input"
-                        type="text"
-                        required
-                        value={item.content}
-                        onChange={(e) =>
-                          handleBubbleContentChange(index, e.target.value)
-                        }
-                        placeholder={`Enter ${item.type} content`}
-                      />
+                      <div className="bubble-input">
+                        <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1735363256/Vector_2_ga51fe.png" />
+                        <input
+                          className="bubble-input"
+                          type="text"
+                          required
+                          value={item.content}
+                          onChange={(e) =>
+                            handleBubbleContentChange(index, e.target.value)
+                          }
+                          placeholder={`Enter ${item.type} content`}
+                        />
+                      </div>
                     )}
                   </div>
                 ))}
