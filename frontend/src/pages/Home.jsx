@@ -644,7 +644,7 @@ const handledeleteForm = async (formId) => {
     },
     placeholder: (provided) => ({
       ...provided,
-      color: "#aaaaaa",
+      color: "black",
       fontSize: "14px",
     }),
     singleValue: (provided) => ({
