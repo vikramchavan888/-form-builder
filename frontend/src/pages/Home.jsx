@@ -973,8 +973,10 @@ const handledeleteForm = async (formId) => {
           )}
 
           {showPopup && (
-         
-            <div className={dark ? "popup-content" : "popup-content-light"} ref={popupRef}>
+            <div
+              className={dark ? "popup-content" : "popup-content-light"}
+              ref={popupRef}
+            >
               <h1>Create New Folder</h1>
               <input
                 type="text"
@@ -993,7 +995,7 @@ const handledeleteForm = async (formId) => {
                   Done
                 </button>
                 <button
-                  className="cancle-add-form"
+                  className={dark ? "cancle-add-form" : "cancle-add-form-light"}
                   onClick={() => setShowPopup(false)}
                 >
                   Cancel

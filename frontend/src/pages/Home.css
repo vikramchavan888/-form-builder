@@ -198,7 +198,7 @@ border: 1px solid #47474A;position: fixed;
   text-align: start;background: white;
 }
 
-.popup-content-light input{width: 100%;border-radius: .5rem ;border: none;height:  3rem;padding: 1rem;color: rgb(0, 0, 0);
+.popup-content-light input{width: 100%;border-radius: .5rem ;border: 1px solid #51424266;height:  3rem;padding: 1rem;color: rgb(0, 0, 0);
     background:white;margin-top: 2rem;}
 
 
@@ -254,7 +254,6 @@ line-height: 41px;
 
 .done-add-form {width: 50%;
   padding: 10px; font-family:'Roboto',sans-serif;
-
   border-right: 1px solid #FFFFFF29;
   font-size: 1.5rem;font-weight: 500;
   color: #1A5FFF;background: transparent;
@@ -263,12 +262,20 @@ line-height: 41px;
 
 .cancle-add-form {width: 50%;
   padding: 10px; font-family:'Roboto',sans-serif;
-
  border: none;
   font-size: 1.5rem;font-weight: 500;
   color: white;background: transparent;
   cursor: pointer;
 }
+
+.cancle-add-form-light {width: 50%;
+  padding: 10px; font-family:'Roboto',sans-serif;
+ border: none;
+  font-size: 1.5rem;font-weight: 500;
+  color: rgb(0, 0, 0);background: transparent;
+  cursor: pointer;
+}
+
 
 
 
