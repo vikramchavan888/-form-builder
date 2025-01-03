@@ -339,7 +339,7 @@ const DynamicFormEditor = () => {
                       )
                     ) : (
                       <div className="bubble-input-outer">
-                        <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1735363256/Vector_2_ga51fe.png" />
+                        <img src={imageinputSrcMap[type]} alt={type} />
                         <input
                           className="bubble-input"
                           type="text"
