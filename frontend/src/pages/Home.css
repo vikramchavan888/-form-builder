@@ -1,4 +1,4 @@
-.home-container {
+form.home-container {
   background: #1F1F23;
   height: auto;
   min-height: 100vh;
@@ -66,7 +66,8 @@ margin-top: 1rem;font-family:'Roboto',sans-serif;
 }
 
 
-.darklight-mode h5{margin: .4rem .5rem 0 .5rem;}
+.toggle-lable{margin: .4rem .5rem 0 .5rem;}
+.toggle-lable-light{margin: .4rem .5rem 0 .5rem;color: black;}
 
 
 .home-folder{margin: 0 10% 0 10%; width: 80%; display: flex;flex-direction: row;
@@ -137,7 +138,7 @@ color:black;
     height: 18rem;position: relative;
     color: rgb(0, 0, 0);
     justify-content: center;
-    display: flex;  border: 1px solid #5b5353;
+    display: flex;  border: 1px solid #5b5353cb;
      font-family:'Roboto',sans-serif;
     border-radius: .5rem;
     flex-direction: column;
