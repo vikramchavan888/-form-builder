@@ -20,7 +20,7 @@
   background: #FFFFFF14;
 }
 
-.text-button-light ,.gif-button-light,.image-v ,.video-button-light,.button-button-light,
+.text-button-light ,.gif-button-light,.image-button-light ,.video-button-light,.button-button-light,
 .number-button-light ,.phone-button-light,.email-button-light ,.rating-button-light,.date-button-light
 {border-radius: .5rem ;
   height: 40px;cursor: pointer;
