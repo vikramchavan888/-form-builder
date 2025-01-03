@@ -363,7 +363,10 @@ const Chatbot = () => {
       <div>{renderChatHistory()}</div>
       {renderCurrentItem()}
       {submissionMessage && (
-        <div className="submission-message-overlay">
+        <div
+          onClick={() => window.location.reload()}
+          className="submission-message-overlay"
+        >
           <div className="submission-message">{submissionMessage}</div>
         </div>
       )}
