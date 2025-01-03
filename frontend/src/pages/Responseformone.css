@@ -1,0 +1,84 @@
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-bubble {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  max-width: 60%;
+}
+
+.response-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.send-button {
+  padding: 3px 5px;background: #1A5FFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sent-button{
+  padding: 3px 5px;background: #777777;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+button:hover {
+  background-color: #0056b3;
+}
+.user-responses{border-radius: .5rem; width: 250px;padding: 10px;display: flex;flex-direction: row;justify-content: center;margin-right: .5rem;background-color: #777777;color: white;
+overflow: hidden;overflow-x: scroll;}
+
+
+.submit-button{right: 20px;
+    border: none;
+    width: 304px;height: 40px;
+    padding: 10px;
+    background-color: rgba(62, 224, 62, 0.945);
+    position: absolute;
+    border-radius: .5rem;}
+
+
+.bot-message-text{display: flex;flex-direction: row;margin-bottom: 2rem;width: auto;}
+.bot-message-text img{    margin: .7rem;
+    width: 2.5rem;
+    height: 2.5rem;}
+.bot-message-text p{margin: .7rem 0 1rem 0;
+    background-color: rgba(178, 213, 230, 0.479);
+    padding: 11px;
+    border-radius: .5rem;
+}
+.bot-message-img {    margin: 1.5rem 0 1.5rem 2rem;
+}
+.bot-message-img img{margin-left: 2rem; max-width: 300px;  border-radius: 5px; max-height: 300px;}
+.user-message-text{width: 250px;padding: 10px;display: flex;flex-direction: row;justify-content: center;box-shadow: 0px 4px 6.3px 0px #00000040;margin-right: .5rem;
+}
+.rate-number{height: 1.5rem;width: 1.5rem;border-radius: 1.5rem;margin-right: 1rem;background-color: #1A5FFF;
+  border: none;color: white; cursor: pointer;}
+
+  .user-message-date{width: 250px;}
+
+.renderChatHistory-user {display: flex;flex-direction: row;position: relative;right: 0;margin-left: 26rem;margin-bottom: 2rem;}
+.renderCurrentItem-Responses{display: flex;flex-direction: row;}
+
+.main-chathistory-div{padding: 20px; max-width: 900px; margin:  0 300px 100px 300px ;position: relative;}
+
+.renderContent-user{display: flex;flex-direction: row;position: absolute; right: 18px;}
