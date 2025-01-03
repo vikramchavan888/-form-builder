@@ -1,6 +1,13 @@
-.dark-mode {
-  color: black;
+.form-div-dark {
+ 
+  color: rgb(0, 0, 0); 
 }
+
+.response-div-dark {
+ 
+  color: rgb(0, 0, 0); 
+}
+
 
 
 .bubble-and-input{padding: 1.5rem;width: 24rem; background: #18181B;margin: 1rem 0 1rem 1rem;min-height: 84vh;
