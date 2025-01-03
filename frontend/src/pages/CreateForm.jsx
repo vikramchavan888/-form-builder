@@ -268,8 +268,9 @@ const DynamicFormEditor = () => {
       {showDiv === "form" && (
         <div className="form-workspace">
           <div className="creating-form">
-           
-            <div  className={dark ? "bubble-and-input" : "bubble-and-input-light"}>
+            <div
+              className={dark ? "bubble-and-input" : "bubble-and-input-light"}
+            >
               <h2>Bubbles</h2>
               <div className="Bubbles">
                 {["text", "image", "gif", "video"].map((type) => (
@@ -302,7 +303,7 @@ const DynamicFormEditor = () => {
                 ].map((type) => (
                   <div
                     id="Responses"
-                    className={`${type}-button`}
+                    className={`${type}-button${dark ? "" : "-light"}`}
                     key={type}
                     onClick={() => handleAddItem("Responses", type)}
                   >
