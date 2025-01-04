@@ -387,6 +387,14 @@ border-radius: .5rem;
   .start-flag span{position: absolute; font-family:'Roboto',sans-serif;
 font-size: 1.5rem;margin: .7rem 0 .7rem 3.5rem;
 font-weight: 400;color: white;}
+.start-flag-light{width: 315px;margin:3rem 0  3rem 0;
+border-radius: .5rem;
+color: rgb(0, 0, 0);height: 3.5rem;  border: 1px solid #00000063;;background: #ffffff;
+padding-left: .5rem;}
+.start-flag-light img{position: absolute;margin: 1rem; }
+.start-flag-light span{position: absolute; font-family:'Roboto',sans-serif;
+font-size: 1.5rem;margin: .7rem 0 .7rem 3.5rem;
+font-weight: 400;color: rgb(0, 0, 0);}
 
 .delete-added-item{position: absolute;padding: .2rem 0 0 .3rem;
   left: 19rem; bottom:6rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background-color: #5b5353;

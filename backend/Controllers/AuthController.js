@@ -724,6 +724,58 @@ const getUserWorkspaces = async (req, res) => {
   }
 };
 
+
+
+  const addSharedWorkspace = async (req, res) => {
+    const { workspaceId } = req.params;
+    const { accessLevel, sharedBy, receiverEmail } = req.query;
+
+    console.log("Receiver Email:", receiverEmail); // Log the email
+
+    try {
+      // Validate workspace existence
+      const workspace = await Workspace.findById(workspaceId);
+      if (!workspace) {
+        return res.status(404).json({ error: "Workspace not found" });
+      }
+
+      // Validate the sharer existence
+      const sharer = await UserModel.findById(sharedBy);
+      if (!sharer) {
+        return res.status(404).json({ error: "Sharer not found" });
+      }
+
+      // Validate receiver existence
+      const receiver = await UserModel.findOne({ email: receiverEmail });
+      if (!receiver) {
+        return res.status(404).json({ error: "Receiver not found" });
+      }
+
+      // Check if workspace is already shared
+      const isAlreadyShared = receiver.sharedWorkspaces.some(
+        (workspace) => workspace.workspaceId.toString() === workspaceId
+      );
+      if (isAlreadyShared) {
+        return res.status(400).json({ error: "Workspace already added" });
+      }
+
+      // Add shared workspace to receiver
+      receiver.sharedWorkspaces.push({
+        workspaceId,
+        sharedBy,
+        accessLevel,
+      });
+      await receiver.save();
+
+      res.status(200).json({ message: "Workspace added successfully!" });
+    } catch (error) {
+      console.error("Error adding shared workspace:", error);
+      res.status(500).json({ error: "Failed to process shared workspace" });
+    }
+  };
+
+
+
 module.exports = {
   signup,
   login,
@@ -753,4 +805,5 @@ module.exports = {
   updateoutFormStarted,
   trackFormview,
   trackoutFormview,
+  addSharedWorkspace,
 };

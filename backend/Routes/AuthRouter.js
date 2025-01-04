@@ -26,6 +26,7 @@ const {
   trackoutFormCompleted,
   trackFormview,
   trackoutFormview,
+  addSharedWorkspace,
 } = require("../Controllers/AuthController");
 const { signupValidation, loginValidation } = require('../Middlewares/AuthValidation');
 
@@ -52,7 +53,7 @@ router.get("/folders/:folderId/forms", getFolderForms);
 router.get("/forms/:id", getFormById);
 router.get("/outsideforms/:id", getoutsideFormById);
 router.get("/chat-history/:formId", getChatHistory);
-
+router.get("/share/:workspaceId", addSharedWorkspace);
 router.put("/forms/:id", updatecreatedform);
 router.put("/forms/:formId/start", trackformstarted);
 router.put("/forms/:formId/completed", trackFormCompleted);

@@ -62,7 +62,7 @@ const Chatbot = () => {
     setResponses((prevResponses) => ({
       ...prevResponses,
       [item.identifier]: value,
-    })); 
+    }));
   };
 
   const handleSend = async () => {
@@ -104,7 +104,7 @@ const Chatbot = () => {
         };
 
         await axios.post(
-          "https://form-builder-vikram3.vercel.app/auth/saveChatHistory",
+          `https://form-builder-vikram3.vercel.app/auth/saveChatHistory`,
           chatData
         );
         console.log("Chat history saved successfully");
@@ -122,11 +122,10 @@ const Chatbot = () => {
     }
   };
 
-
   const submitchat = async () => {
     try {
       await axios.put(
-        `https://form-builder-vikram3.vercel.app/auth/outforms/${formId}/completed`,
+        `https://form-builder-vikram3.vercel.app/auth/forms/${formId}/completed`,
         {
           completed: 1,
         }
@@ -142,14 +141,13 @@ const Chatbot = () => {
       switch (item.type) {
         case "text":
           return (
-            <div className="renderContent-user" >
+            <div className="renderContent-user">
               <div className="user-message-text">
                 <input
                   type="text"
                   value={responses[item.identifier] || ""}
                   onChange={(e) => handleInputChange(e, item)}
                   placeholder={`Enter your ${item.type}`}
-                  style={{ width: "100%", border: "none" }}
                 />
               </div>
               <div
@@ -170,7 +168,6 @@ const Chatbot = () => {
                   value={responses[item.identifier] || ""}
                   onChange={(e) => handleInputChange(e, item)}
                   placeholder={`Enter your ${item.type}`}
-                  style={{ width: "100%", border: "none" }}
                 />
               </div>
               <div
@@ -191,7 +188,6 @@ const Chatbot = () => {
                   value={responses[item.identifier] || ""}
                   onChange={(e) => handleInputChange(e, item)}
                   placeholder={`Enter your ${item.type}`}
-                  style={{ width: "100%", border: "none" }}
                 />
               </div>
               <div
@@ -212,7 +208,6 @@ const Chatbot = () => {
                   value={responses[item.identifier] || ""}
                   onChange={(e) => handleInputChange(e, item)}
                   placeholder={`Enter your ${item.type}`}
-                  style={{ width: "100%", border: "none" }}
                 />
               </div>
               <div
@@ -225,30 +220,29 @@ const Chatbot = () => {
             </div>
           );
         case "date":
-        return (
-          <div className="renderContent-user">
-            <div className="user-message-text">
-              <input
-                type="date"
-                value={responses[item.identifier] || ""}
-                onChange={(e) => handleInputChange(e, item)}
-                placeholder={`Enter your ${item.type}`}
-                style={{ width: "100%", border: "none" }}
-              />
-            </div>
-            <div
-              className="send-button"
-              onClick={handleSend}
-              disabled={loading}
-            >
-              <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1735885936/send_k6j6kl.png" />
-            </div>
-          </div>
-        );
-        case "rating":
           return (
             <div className="renderContent-user">
               <div className="user-message-text">
+                <input
+                  type="date"
+                  value={responses[item.identifier] || ""}
+                  onChange={(e) => handleInputChange(e, item)}
+                  placeholder={`Enter your ${item.type}`}
+                />
+              </div>
+              <div
+                className="send-button"
+                onClick={handleSend}
+                disabled={loading}
+              >
+                <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1735885936/send_k6j6kl.png" />
+              </div>
+            </div>
+          );
+        case "rating":
+          return (
+            <div className="renderContent-user">
+              <div className="user-message-text-rate">
                 {[1, 2, 3, 4, 5].map((rating) => (
                   <input
                     key={rating}
@@ -276,7 +270,11 @@ const Chatbot = () => {
             </div>
           );
         case "button":
-          return <button className="submit-button" onClick={submitchat}>Submit</button>;
+          return (
+            <button className="submit-button" onClick={submitchat}>
+              Submit
+            </button>
+          );
         default:
           return null;
       }
@@ -293,27 +291,23 @@ const Chatbot = () => {
       case "image":
         return (
           <div className="bot-message-img">
-            <img
-              src={item.content}
-              alt="IMG content"
-            />
+            <img src={item.content} alt="IMG content" />
           </div>
         );
       case "gif":
         return (
           <div className="bot-message-img">
-            <img
-              src={item.content}
-              alt="IMG content"
-            />
+            <img src={item.content} alt="IMG content" />
           </div>
         );
       case "video":
         return (
-          <video controls >
-            <source src={item.content} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="bot-message-img">
+            <video className="bot-message-img-vedio" controls>
+              <source src={item.content} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         );
       default:
         return null;
@@ -324,10 +318,7 @@ const Chatbot = () => {
     return chatHistory.map((item, index) => {
       if (item.type === "response") {
         return (
-          <div
-            className="renderChatHistory-user "
-            
-          >
+          <div className="renderChatHistory-user ">
             <div className="user-responses">{item.response}</div>
             <div className="sent-button">
               <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1735885936/send_k6j6kl.png" />
@@ -335,12 +326,8 @@ const Chatbot = () => {
           </div>
         );
       }
-      
-      return (
-        <div>
-          {renderContent(item)}
-        </div>
-      );
+
+      return <div>{renderContent(item)}</div>;
     });
   };
 
@@ -352,10 +339,7 @@ const Chatbot = () => {
     if (currentItem.identifier.includes("Responses")) {
       return (
         <>
-          <div
-            className="renderCurrentItem-Responses"
-            
-          >
+          <div className="renderCurrentItem-Responses">
             {renderContent(currentItem)}
           </div>
         </>

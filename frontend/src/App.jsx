@@ -9,6 +9,7 @@ import CreateForm from "./pages/CreateForm";
 import CreateOutsideform from "./pages/CreateOutsideform"
 import Responseformone from "./pages/Responseformone";
 import Responseformtwo from "./pages/Responseformtwo";
+import ShareWorkspaceHandler from "./pages/ShareWorkspaceHandler";
 import { useState } from "react";
 import HandleRefresh from "./HandleRefresh";
 
@@ -42,6 +43,7 @@ function App() {
 
         <Route path="/formresponse/:formId" element={<Responseformone />} />
         <Route path="/formreesponse/:formId" element={<Responseformtwo />} />
+        <Route path="/share/:workspaceId" element={<ShareWorkspaceHandler />} />
       </Routes>
     </div>
   );

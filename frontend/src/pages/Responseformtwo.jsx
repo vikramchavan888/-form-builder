@@ -14,7 +14,6 @@ const Chatbot = () => {
   const [selectedRating, setSelectedRating] = useState(null);
   const [submissionMessage, setSubmissionMessage] = useState("");
 
-
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -105,7 +104,7 @@ const Chatbot = () => {
         };
 
         await axios.post(
-          "https://form-builder-vikram3.vercel.app/auth/saveChatHistory",
+          `https://form-builder-vikram3.vercel.app/auth/saveChatHistory`,
           chatData
         );
         console.log("Chat history saved successfully");
@@ -137,7 +136,6 @@ const Chatbot = () => {
     }
   };
 
-
   const renderContent = (item) => {
     if (item.identifier === "Responses") {
       switch (item.type) {
@@ -150,7 +148,6 @@ const Chatbot = () => {
                   value={responses[item.identifier] || ""}
                   onChange={(e) => handleInputChange(e, item)}
                   placeholder={`Enter your ${item.type}`}
-                  style={{ width: "100%", border: "none" }}
                 />
               </div>
               <div
@@ -171,7 +168,6 @@ const Chatbot = () => {
                   value={responses[item.identifier] || ""}
                   onChange={(e) => handleInputChange(e, item)}
                   placeholder={`Enter your ${item.type}`}
-                  style={{ width: "100%", border: "none" }}
                 />
               </div>
               <div
@@ -192,7 +188,6 @@ const Chatbot = () => {
                   value={responses[item.identifier] || ""}
                   onChange={(e) => handleInputChange(e, item)}
                   placeholder={`Enter your ${item.type}`}
-                  style={{ width: "100%", border: "none" }}
                 />
               </div>
               <div
@@ -213,7 +208,6 @@ const Chatbot = () => {
                   value={responses[item.identifier] || ""}
                   onChange={(e) => handleInputChange(e, item)}
                   placeholder={`Enter your ${item.type}`}
-                  style={{ width: "100%", border: "none" }}
                 />
               </div>
               <div
@@ -234,7 +228,6 @@ const Chatbot = () => {
                   value={responses[item.identifier] || ""}
                   onChange={(e) => handleInputChange(e, item)}
                   placeholder={`Enter your ${item.type}`}
-                  style={{ width: "100%", border: "none" }}
                 />
               </div>
               <div
@@ -249,7 +242,7 @@ const Chatbot = () => {
         case "rating":
           return (
             <div className="renderContent-user">
-              <div className="user-message-text">
+              <div className="user-message-text-rate">
                 {[1, 2, 3, 4, 5].map((rating) => (
                   <input
                     key={rating}
@@ -309,10 +302,12 @@ const Chatbot = () => {
         );
       case "video":
         return (
-          <video controls>
-            <source src={item.content} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="bot-message-img">
+            <video className="bot-message-img-vedio" controls>
+              <source src={item.content} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         );
       default:
         return null;

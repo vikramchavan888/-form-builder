@@ -338,8 +338,15 @@ const DynamicFormEditor = () => {
               </div>
             </div>
             <div className="form-preview">
-              <div className="start-flag">
-                <img src="https://res.cloudinary.com/dlwpgtmcn/image/upload/v1735392255/Vector_3_kxcuz0.png" />
+              <div className={dark ? "start-flag" : "start-flag-light"}>
+                <img
+                  src={
+                    dark
+                      ? "https://res.cloudinary.com/dlwpgtmcn/image/upload/v1735392255/Vector_3_kxcuz0.png"
+                      : "https://res.cloudinary.com/dlwpgtmcn/image/upload/v1735967911/Vector_5_iylakr.png"
+                  }
+                  alt="Start Flag"
+                />
                 <span>start</span>
               </div>
               <div>
