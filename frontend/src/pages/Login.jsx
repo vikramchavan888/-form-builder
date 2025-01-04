@@ -41,11 +41,11 @@ function Login() {
                 body: JSON.stringify(loginInfo)
             });
             const result = await response.json();
-            const { success, message, jwtToken,id,workspaceId, name, error } = result;
+            const { success, message, jwtToken,id,workspaceId, email, error } = result;
             if (success) {
                 handleSuccess(message);
                 localStorage.setItem('token', jwtToken);
-                localStorage.setItem('loggedInUser', name);
+                localStorage.setItem("loggedInUser", email);
                   localStorage.setItem("userId", id);
                   localStorage.setItem("workspaceId", workspaceId);
                 setTimeout(() => {
