@@ -447,7 +447,7 @@ const updateUser = async (req, res) => {
     if (name) {
       await Workspace.updateMany(
         { ownerId: userId }, // Match all workspaces with the ownerId
-        { $set: { name: name } } // Update the `ownerName` field directly
+        { $set: { name: `${name}'s Workspace` } } // Update the `ownerName` field directly
       );
     }
 
