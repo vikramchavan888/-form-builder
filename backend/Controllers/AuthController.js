@@ -423,11 +423,13 @@ const updateUser = async (req, res) => {
   const { name, email, oldPassword, newPassword } = req.body;
 
   try {
+    // Find the user
     const user = await UserModel.findById(userId);
-
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
+
+    // Update user details
     if (name) user.name = name;
     if (email) user.email = email;
     if (oldPassword && newPassword) {
@@ -441,9 +443,19 @@ const updateUser = async (req, res) => {
     }
     await user.save();
 
-    res.status(200).json({ message: "User updated successfully" });
+    // Update all workspaces where the user is the owner
+    if (name) {
+      await Workspace.updateMany(
+        { ownerId: userId }, // Match all workspaces with the ownerId
+        { $set: { name: name } } // Update the `ownerName` field directly
+      );
+    }
+
+    res
+      .status(200)
+      .json({ message: "User and workspaces updated successfully" });
   } catch (error) {
-    console.error("Error updating user:", error);
+    console.error("Error updating user and workspaces:", error);
     res
       .status(500)
       .json({ message: "An error occurred while updating the user" });
