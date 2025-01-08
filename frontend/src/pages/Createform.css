@@ -400,7 +400,19 @@ font-weight: 400;color: rgb(0, 0, 0);}
   left: 19rem; bottom:6rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background-color: #5b5353;
   cursor: pointer; }
 
+.form-workspace-statistics-light{width: 24rem;display: flex;flex-direction: row;justify-content: space-between;
+height: 6rem; margin: 4rem 0 0 30rem;
+}
+.form-workspace-statistics-light h4{width: 8rem; height: 50%;border-radius:0 0 1rem 1rem ;background: #ffffff;display: flex; 
+padding: 0 0 0 1rem;;font-family:'Roboto',sans-serif;
+font-size: 1rem;letter-spacing: 1px;border: 1px solid #65656969;
+font-weight: 400;color: rgb(0, 0, 0);border-style: hidden solid solid solid;}
 
+.form-workspace-statistics-view-start-light{width: 8rem; height: 50%;border-radius: 1rem 1rem 0 0 ;background: #ffffff;display: flex; 
+padding: 1rem 0 0 1rem;;font-family:'Roboto',sans-serif;
+font-size: 1rem;letter-spacing: 1px;border: 1px solid #65656969;
+font-weight: 400;color: rgb(0, 0, 0);border-style:  solid solid hidden solid;
+}
   .delete-added-item-light{position: absolute;padding: .2rem 0 0 .3rem;
   left: 19rem; bottom:6rem ;height: 2rem;width: 2rem;border-radius: 2rem;border: 1px solid #5b5353;background:white;
   cursor: pointer; }

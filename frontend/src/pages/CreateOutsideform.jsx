@@ -430,15 +430,33 @@ const DynamicFormEditor = () => {
         (chatHistory ? (
           <div className="form-workspace">
             <div className="Chat-hiatory">
-              <div className="form-workspace-statistics">
+              <div
+                className={
+                  dark
+                    ? "form-workspace-statistics"
+                    : "form-workspace-statistics-light"
+                }
+              >
                 <div>
-                  <span className="form-workspace-statistics-view-start">
+                  <span
+                    className={
+                      dark
+                        ? "form-workspace-statistics-view-start"
+                        : "form-workspace-statistics-view-start-light"
+                    }
+                  >
                     Views
                   </span>
                   <h4>{View}</h4>
                 </div>
                 <div>
-                  <span className="form-workspace-statistics-view-start">
+                  <span
+                    className={
+                      dark
+                        ? "form-workspace-statistics-view-start"
+                        : "form-workspace-statistics-view-start-light"
+                    }
+                  >
                     Start
                   </span>
                   <h4>{Started}</h4>
@@ -452,9 +470,10 @@ const DynamicFormEditor = () => {
                         style={{
                           padding: "10px",
                           border: "1px solid #ddd",
-                          backgroundColor: "#18181B",
+                          backgroundColor: dark ? "#18181B" : "#f9f9f9",
+                          color: dark ? "white" : "#000",
                           width: "2rem",
-                          color: "white",
+                         
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -468,9 +487,10 @@ const DynamicFormEditor = () => {
                         style={{
                           padding: "10px",
                           border: "1px solid #ddd",
-                          backgroundColor: "#18181B",
+                          backgroundColor: dark ? "#18181B" : "#f9f9f9",
+                          color: dark ? "white" : "#000",
                           width: "10rem",
-                          color: "white",
+
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -488,9 +508,10 @@ const DynamicFormEditor = () => {
                           style={{
                             padding: "10px",
                             border: "1px solid #ddd",
-                            backgroundColor: "#18181B",
+                            backgroundColor: dark ? "#18181B" : "#f9f9f9",
+                            color: dark ? "white" : "#000",
                             width: "10rem",
-                            color: "white",
+
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -531,10 +552,11 @@ const DynamicFormEditor = () => {
                               style={{
                                 padding: "10px",
                                 border: "1px solid #ddd",
-                                backgroundColor: "#18181B",
+                                backgroundColor: dark ? "#18181B" : "#f9f9f9",
+                                color: dark ? "white" : "#000",
                                 width: "2rem",
                                 minHeight: "4rem",
-                                color: "white",
+
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
@@ -551,10 +573,11 @@ const DynamicFormEditor = () => {
                               style={{
                                 padding: "10px",
                                 border: "1px solid #ddd",
-                                backgroundColor: "#18181B",
+                                backgroundColor: dark ? "#18181B" : "#f9f9f9",
+                                color: dark ? "white" : "#000",
                                 width: "10rem",
                                 minHeight: "4rem",
-                                color: "white",
+
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
@@ -581,9 +604,10 @@ const DynamicFormEditor = () => {
                                 style={{
                                   padding: "10px",
                                   border: "1px solid #ddd",
-                                  backgroundColor: "#18181B",
+                                  backgroundColor: dark ? "#18181B" : "#f9f9f9",
+                                  color: dark ? "white" : "#000",
                                   width: "10rem",
-                                  color: "white",
+
                                   display: "flex",
                                   alignItems: "center",
                                   justifyContent: "center",
